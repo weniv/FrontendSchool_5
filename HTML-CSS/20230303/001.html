@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>폰트적용</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+
+    .black-han-sans {
+      font-family: 'Black Han Sans', sans-serif;
+    }
+
+    .gugi {
+      font-family: 'Gugi', cursive;
+    }
+
+
+    @font-face {
+      font-family: "Pretendard-Regular";
+      src: url("font/Pretendard-Regular.woff") format("woff");
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "Pretendard-Bold";
+      src: url("font/Pretendard-Bold.woff") format("woff");
+      font-weight: 700;
+      font-style: normal;
+    }
+
+
+    body {
+      font-family: Pretendard-Regular, "Times New Roman", Dotum, "돋움", sans-serif;
+    }
+
+    .pt-b {
+      font-family: Pretendard-Bold, sans-serif;
+      font-weight: 700;
+    }
+  </style>
+</head>
+
+<body>
+  <p>안녕하세요</p>
+  <p class="pt-b">안녕하세요</p>
+  <p class="black-han-sans">안녕하세요</p>
+  <p style="font-family: 'Jalnan OTF';">안녕하세요</p>
+  <p class="gugi">안녕하세요</p>
+</body>
+
+</html>
