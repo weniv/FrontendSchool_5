@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "KyoboHandwriting2020A";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/KyoboHandwriting2020A.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "UhBeematsuko";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeematsuko.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  font-size: 10px;
+}
+
+div {
+  text-align: center;
+}
+h1 {
+  font-size: 1.6rem;
+  color: #767676;
+  font-weight: normal;
+  font-family: KyoboHandwriting2020A;
+}
+
+h2 {
+  text-transform: uppercase;
+  text-decoration: underline wavy slateblue 1px;
+}
+
+p.uhbee {
+  font-family: "UhBeematsuko";
+  font-size: 4rem;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+  word-spacing: 0.2em;
+  color: royalblue;
+  text-shadow: 1px 1px 0 rgb(175, 226, 247);
+}
+
+p.uhbee strong {
+  color: black;
+  font-size: 1.5em;
+}

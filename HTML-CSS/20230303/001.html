@@ -12,17 +12,17 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
 
-    .black-han-sans {
-      font-family: 'Black Han Sans', sans-serif;
-    }
-
-    .gugi {
-      font-family: 'Gugi', cursive;
-    }
 
 
     @font-face {
       font-family: "Pretendard-Regular";
+      /* cdn으로 폰트사이트에서 경로를 받아옴 */
+      /* src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff"); */
+
+      /* 내가 업로드 해둔 폰트 경로를 통해 폰트를 받아옴 
+        혹시나 폰트 사이트가 문제가 생길 수도 있고, 
+        작업하는 환경이 타 사이트의 연결을 막아놓은 경우, 폰트를 직접 연결해두는게 좋음.
+      */
       src: url("font/Pretendard-Regular.woff") format("woff");
       font-weight: 400;
       font-style: normal;
@@ -36,23 +36,92 @@
     }
 
 
+    html {
+      font-size: 10px;
+    }
+
     body {
       font-family: Pretendard-Regular, "Times New Roman", Dotum, "돋움", sans-serif;
     }
 
+    .black-han-sans {
+      font-family: 'Black Han Sans', sans-serif;
+    }
+
+    .gugi {
+      font-family: 'Gugi', cursive;
+    }
+
+    /* 폰트에 다양한 스타일을 적용할 수 있습니다 */
     .pt-b {
       font-family: Pretendard-Bold, sans-serif;
       font-weight: 700;
+      font-size: 1.6rem;
+      text-shadow: 1px 1px 0px skyblue;
+      text-align: justify;
+      word-break: break-all;
+      line-height: 1.4;
+      /* letter-spacing: 40px; */
+      /* text-align: center; */
+      text-indent: 1em;
+    }
+
+    /* 단축속성 */
+    .font {
+      /* 순서틀림 - 적용되지 않습니다.*/
+      /* font: 2rem/1.4 bold Gugi, sans-serif; */
+      /* font: bold 2rem/1.4 Gugi, sans-serif; */
+      font: bold 1.6rem Gugi, sans-serif;
+    }
+
+    .va {
+      font-size: 2rem;
+    }
+
+    /* vertical-align */
+    .va strong {
+      font-size: 0.2em;
+      vertical-align: top;
+    }
+
+    /* line-height를 중앙정렬을 위해 쓰기도 합니다 */
+    .box {
+      background: salmon;
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      text-align: center;
+      color: #fff;
     }
   </style>
 </head>
 
 <body>
-  <p>안녕하세요</p>
+  <p class="font">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum qui, consectetur nisi sequi autem ullam
+    nesciunt voluptatibus accusantium, dolorem quia placeat, aliquam a hic. Consequatur nihil perferendis aspernatur eum
+    libero?</p>
+  <div class="box">
+    안녕<br>
+    안녕
+  </div>
+  <p class="va">안녕하세요 <strong>반갑습니다</strong></p>
+
   <p class="pt-b">안녕하세요</p>
+  <p class="pt-b">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, laudantium mollitia soluta voluptates expedita ad
+    excepturi vel porro recusandae obcaecati blanditiis aut dolorem animi qui totam dicta dolor illo nisi.
+  </p>
+  <p class="pt-b">
+    광야에서 우리 얼음 꽃이 그들을 그들은 힘있다. 뛰노는 기관과 꽃 봄바람이다. 행복스럽고 우는 가슴에 그러므로 광야에서 얼마나 공자는 인간에 철환하였는가? 바이며, 그들의 두기 사랑의 발휘하기 기관과 이상,
+    안고,
+    것이다. 가장 생명을 미인을 맺어, 트고, 불러 밝은 위하여서. 얼마나 길을 가슴이 봄바람을 오직 힘있다. 같이, 그들은 같으며, 든 이것이다. 눈에 얼마나 예수는 있는 따뜻한 것이다. 광야에서 가지에 어디
+    인간이
+    피다. 그들은 얼마나 같은 가는 같이, 반짝이는 운다.
+  </p>
   <p class="black-han-sans">안녕하세요</p>
   <p style="font-family: 'Jalnan OTF';">안녕하세요</p>
   <p class="gugi">안녕하세요</p>
+
 </body>
 
 </html>

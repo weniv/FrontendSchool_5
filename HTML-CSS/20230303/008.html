@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>퀴즈</title>
+  <style>
+    div #id {
+      color: green;
+    }
+
+    p {
+      color: black;
+    }
+
+    #id {
+      color: blue;
+    }
+
+    .class {
+      color: yellow;
+    }
+
+    /* 클래스 + 유형 선택자 */
+    .ul a {
+      color: yellow;
+    }
+
+    /* 클래스 선택자 */
+    .click {
+      color: green;
+      background: black;
+    }
+
+    /* 유형 선택자 */
+    html body main section article div ul li p strong span a {
+      background: purple;
+      color: blue !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <p id="id" class="class">
+      1. 이 글자는 어떤 색일까요?
+    </p>
+    <p id="id" class="class" style="color:red">
+      2. 이 글자는 어떤 색일까요??
+    </p>
+  </div>
+
+
+  <main>
+    <section>
+      <article>
+        <div>
+          <ul class="ul">
+            <li>
+              <p>
+                <strong>
+                  <span>
+                    <a href="#" class="click" style="color:aqua !important">
+                      1. 이 글자는 어떤 색일까요?
+                      2. 배경색은 어떤 색일까요?
+                    </a>
+                  </span>
+                </strong>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </article>
+    </section>
+  </main>
+
+</body>
+
+</html>

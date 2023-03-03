@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가상 클래스</title>
+  <style>
+    :root {
+      --main-color: rgb(3, 3, 255);
+      --test: red;
+      --pane-padding: 5px 42px;
+    }
+
+    strong {
+      color: var(--test);
+    }
+
+
+    li:first-child {
+      color: var(--main-color);
+    }
+
+    li:last-child {
+      color: sandybrown;
+    }
+
+    li:nth-child(3) {
+      color: royalblue;
+    }
+
+    /* 홀수 */
+    /* li:nth-child(odd) {
+      text-decoration: underline;
+    } */
+
+    li:nth-child(2n+1) {
+      text-decoration: underline;
+    }
+
+    /* 짝수 */
+    /* li:nth-child(even) {
+      text-decoration: line-through rosybrown;
+    } */
+
+    li:nth-child(2n) {
+      text-decoration: line-through rosybrown;
+    }
+
+    /* .last-child {
+      color: sandybrown;
+    } */
+
+    /* div 자식 요소중에 3번째 */
+    div :nth-child(3) {
+      text-decoration: underline;
+    }
+
+    /* p의 형제 중 3번째 p */
+    p:nth-child(3) {
+      text-decoration: underline;
+    }
+
+    p:nth-of-type(3) {
+      color: var(--main-color);
+    }
+
+    p:only-of-type {
+      border: 3px solid sandybrown;
+    }
+
+    li:not(:first-child) {
+      background: #eee;
+      margin-top: 20px;
+    }
+
+    li:not(.red) {
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li class="red">첫번째</li>
+    <li>두번째</li>
+    <li>세번째</li>
+    <li class="red">네번째</li>
+    <li>다섯번째</li>
+    <li>여섯번째</li>
+    <li>일곱번째</li>
+    <li>여덟번째</li>
+    <li>아홉번째</li>
+    <li class="last-child">열번째</li>
+  </ul>
+
+  <div>
+    <p>첫번째</p>
+    <p>두번째</p>
+    <strong>세번째</strong>
+    <p>네번째</p>
+
+    <div>다섯번째</div>
+
+    <p>여섯번째</p>
+    <p>일곱번째</p>
+    <p>여덟번째</p>
+    <p>아홉번째</p>
+    <p>열번째</p>
+  </div>
+
+</body>
+
+</html>

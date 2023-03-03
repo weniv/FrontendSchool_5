@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마진병합 현상 해결</title>
+  <style>
+    body {
+      color: #fff;
+      font-size: 40px;
+    }
+
+    p {
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      text-align: center;
+    }
+
+    .a {
+      /* background: salmon; */
+      margin: 20px;
+      /* border: 5px solid #000; */
+      border-width: 5px 0;
+      border-color: aqua;
+      border-top: 50px solid pink;
+      border-right: 50px solid transparent;
+      border-left: 50px solid transparent;
+      box-sizing: border-box;
+    }
+
+    .b {
+      background: slateblue;
+      margin: 30px 20px;
+    }
+
+    div {
+      background: skyblue;
+    }
+
+    .c {
+      background: seagreen;
+      margin: 0;
+    }
+
+    .wrap {
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <p class="a">A</p>
+  <p class="b">B</p>
+
+
+
+  <div class="wrap">
+    <p class="c">C</p>
+
+  </div>
+
+</body>
+
+</html>
