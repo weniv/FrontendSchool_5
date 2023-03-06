@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    /* 띄어쓰기는 자손 선택자 
+      div p - div의 자손인 p
+     */
+    /* div 자손이면서 형제중에 유일한 타입의 태그 */
+    div :only-of-type {
+      border: 3px solid sandybrown;
+    }
+
+    /* div이면서 형제중에 유일한 타입의 태그 */
+    div:only-of-type {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    /* div 자손이면서 형제 중 3번째 */
+    div :nth-child(3) {
+      text-decoration: underline;
+    }
+
+    /* div이면서 형제중에 세번째 - 현재 html에 없음 */
+    div:nth-child(3) {
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div>
+    <p>첫번째</p>
+    <p>두번째</p>
+    <strong>세번째</strong>
+    <p>네번째</p>
+
+    <div>다섯번째</div>
+
+    <p>여섯번째</p>
+    <p>일곱번째</p>
+    <p>여덟번째</p>
+    <p>아홉번째</p>
+    <p>열번째</p>
+  </div>
+</body>
+
+</html>

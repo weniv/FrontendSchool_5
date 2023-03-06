@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>display</title>
+  <style>
+    div {
+      display: inline;
+      background: rosybrown;
+    }
+
+    div~div {
+      margin-top: 10px;
+    }
+
+    span {
+      display: inline-block;
+      background: salmon;
+      width: 100px;
+      height: 100px;
+    }
+
+    .box {
+      font-size: 0;
+    }
+
+    .box span {
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    블록
+  </div>
+  <div>
+    블록
+  </div>
+  <div>
+    블록
+  </div>
+  <span>인라인</span><span>인라인</span><span>인라인</span>
+
+</body>
+
+</html>
