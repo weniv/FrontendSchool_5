@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    header {
+      background: skyblue;
+      height: 100px;
+      margin-bottom: 20px;
+    }
+
+    section {
+      background: slateblue;
+      float: left;
+      /* border-right: 1px solid slateblue;
+      width: 70%; */
+
+      width: calc(70% - 20px);
+      /*
+        width: 70%;
+        border-right: 20px solid #fff;
+        box-sizing: border-box; 
+      */
+      height: 400px;
+    }
+
+
+
+    aside {
+      background: lime;
+      height: 200px;
+      float: right;
+      width: 30%;
+    }
+
+    footer {
+      background: salmon;
+      height: 100px;
+      clear: both;
+      margin-top: 20px;
+    }
+
+    .clear-fix::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    @media (max-width:640px) {
+      section,
+      aside {
+        float: none;
+        width: 100%;
+      }
+
+      aside {
+        margin-top: 20px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <header>header</header>
+
+  <div class="clear-fix">
+    <section>section</section>
+    <aside>aside</aside>
+  </div>
+  <footer>footer</footer>
+</body>
+
+</html>
