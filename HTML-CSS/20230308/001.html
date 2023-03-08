@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex</title>
+  <style>
+    .flex-container {
+      display: flex;
+      flex-direction: column;
+      background: #eee;
+      border: 2px solid #ddd;
+      margin-bottom: 20px;
+      height: 150px;
+    }
+
+    .flex-item {
+      background: skyblue;
+      border: 3px solid royalblue
+    }
+
+    span.flex-item {
+      background: gold;
+    }
+
+    .center {
+      justify-content: center;
+    }
+
+    .flex-end {
+      justify-content: flex-end;
+    }
+
+    .space-between {
+      justify-content: space-between;
+    }
+
+    .space-around {
+      justify-content: space-around;
+    }
+
+    .space-evenly {
+      justify-content: space-evenly;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 블록 -->
+  <div class="flex-container">
+    <div class="flex-item">A</div>
+    <div class="flex-item">B</div>
+    <div class="flex-item">C</div>
+  </div>
+  <div class="flex-container center">
+    <div class="flex-item">A</div>
+    <div class="flex-item">B</div>
+    <div class="flex-item">C</div>
+  </div>
+  <div class="flex-container flex-end">
+    <div class="flex-item">A</div>
+    <div class="flex-item">B</div>
+    <div class="flex-item">C</div>
+  </div>
+
+  <div class="flex-container space-between">
+    <div class="flex-item">A</div>
+    <div class="flex-item">B</div>
+    <div class="flex-item">C</div>
+  </div>
+
+  <div class="flex-container space-around">
+    <div class="flex-item">A</div>
+    <div class="flex-item">B</div>
+    <div class="flex-item">C</div>
+  </div>
+  <div class="flex-container space-evenly">
+    <div class="flex-item">A</div>
+    <div class="flex-item">B</div>
+    <div class="flex-item">C</div>
+  </div>
+
+  <!-- 인라인 -->
+  <span class="flex-container">
+    <span class="flex-item">A</span>
+    <span class="flex-item">B</span>
+    <span class="flex-item">C</span>
+  </span>
+  <span class="flex-container center">
+    <span class="flex-item">A</span>
+    <span class="flex-item">B</span>
+    <span class="flex-item">C</span>
+  </span>
+  <span class="flex-container flex-end">
+    <span class="flex-item">A</span>
+    <span class="flex-item">B</span>
+    <span class="flex-item">C</span>
+  </span>
+  <span class="flex-container space-between">
+    <span class="flex-item">A</span>
+    <span class="flex-item">B</span>
+    <span class="flex-item">C</span>
+  </span>
+
+
+</body>
+
+</html>
