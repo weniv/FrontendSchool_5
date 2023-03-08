@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid</title>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 2fr 1fr;
+
+
+
+      gap: 20px 20px;
+    }
+
+    .grid-item {
+      background: skyblue;
+      border: 3px solid royalblue;
+
+    }
+
+    .grid-item:first-child {
+      /* grid-row-start: 1;
+      grid-row-end: 2;
+      grid-column-start: 1;
+      grid-column-end: 4; */
+      grid-row: 1/2;
+      grid-column: 1/4;
+      grid-area: 1/1/1/ span 3;
+      background-color: sandybrown;
+    }
+
+    .grid-item:nth-child(2) {
+      grid-row-start: 2;
+      grid-row-end: 4;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      background-color: salmon;
+    }
+
+
+    span.grid-item {
+      background: gold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grid-container">
+    <div class="grid-item">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos quasi animi minus quisquam ut id numquam. Eveniet
+      earum aspernatur quasi consequuntur totam aliquam inventore minima magni perferendis. Possimus, optio quas!
+    </div>
+    <div class="grid-item">B</div>
+    <div class="grid-item">C</div>
+    <div class="grid-item">D</div>
+    <div class="grid-item">E</div>
+    <div class="grid-item">F</div>
+  </div>
+
+
+  <!-- <span class="grid-container">
+    <span class="grid-item">A</span>
+    <span class="grid-item">B</span>
+    <span class="grid-item">C</span>
+    <span class="grid-item">D</span>
+    <span class="grid-item">E</span>
+    <span class="grid-item">F</span>
+  </span> -->
+
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex layout</title>
+  <style>
+    header {
+      background: salmon;
+    }
+
+    section {
+      background: gold;
+    }
+
+    aside {
+      background: slateblue;
+    }
+
+    footer {
+      background: seagreen;
+    }
+
+    .wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      height: 400px;
+      background: #eee;
+      justify-content: space-between;
+    }
+
+    .wrap2 {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-grow: 1;
+    }
+
+    header,
+    footer {
+      flex-basis: 50px;
+    }
+
+    .wrap2 section {
+      flex-grow: 1;
+    }
+
+    .wrap2 aside {
+      flex-basis: 200px;
+    }
+
+    header,
+    section,
+    aside,
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>header</header>
+    <div class="wrap2">
+      <section>section</section>
+      <aside>aside</aside>
+    </div>
+    <footer>footer</footer>
+  </div>
+
+
+
+  <!-- <header>header</header>
+  <div class="wrap2">
+    <section>section</section>
+    <aside>aside</aside>
+  </div>
+  <footer>footer</footer> -->
+
+
+</body>
+</body>
+
+</html>

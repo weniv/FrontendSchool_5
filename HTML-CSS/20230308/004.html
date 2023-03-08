@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    body {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .wrap {
+      background: #ddd;
+      width: 200px;
+      height: 200px;
+    }
+
+    .box {
+      width: 50px;
+      height: 50px;
+      color: #fff;
+      text-align: center;
+      line-height: 50px;
+      font-weight: bold;
+      background: royalblue;
+    }
+
+    /* row로 풀기 :1 */
+    .ex1 {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    /* row로 풀기 :2 */
+    .ex2 {
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+    }
+
+    /* column으로 풀기 */
+    .ex3 {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .ex4 {
+      overflow: hidden;
+    }
+
+    .ex4 .box {
+      margin: calc((200px - 50px) / 2) 0 auto auto;
+    }
+
+    .ex5 {
+      position: relative;
+    }
+
+    .ex5 .box {
+      position: absolute;
+      top: calc((200px - 50px) / 2);
+      right: 0;
+    }
+
+    /* flex 말고 유지보수, 반응형 고려: 강사가 선호하는 방식 */
+    .ex6 {
+      position: relative;
+    }
+
+    .ex6 .box {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+
+    .ex7 {
+      text-align: right;
+    }
+
+    .ex7 .box {
+      display: inline-block;
+      margin-top: calc((200px - 50px) / 2);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap ex1">
+    <div class="box">A</div>
+  </div>
+  <div class="wrap ex2">
+    <div class="box">A</div>
+  </div>
+  <div class="wrap ex3">
+    <div class="box">A</div>
+  </div>
+  <div class="wrap ex4">
+    <div class="box">A</div>
+  </div>
+
+
+  <div class="wrap ex5">
+    <div class="box">A</div>
+  </div>
+
+  <div class="wrap ex6">
+    <div class="box">A</div>
+  </div>
+
+  <div class="wrap ex7">
+    <div class="box">A</div>
+  </div>
+</body>
+
+</html>

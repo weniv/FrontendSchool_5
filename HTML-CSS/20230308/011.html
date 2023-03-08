@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dense</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: 200px 100px 100px;
+      grid-template-rows: 200px 200px;
+      background: #eee;
+      grid-auto-flow: row;
+    }
+
+    .item {
+      background: skyblue;
+    }
+
+    .item:first-child {
+      background-color: gold;
+      grid-column: 2 / span2;
+      /* grid-area: 1/2/1/span2; */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="item">A</div>
+    <div class="item">B</div>
+    <div class="item">C</div>
+    <div class="item">D</div>
+    <div class="item">E</div>
+
+  </div>
+
+</body>
+
+</html>
