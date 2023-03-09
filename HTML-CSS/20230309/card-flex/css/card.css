@@ -11,7 +11,7 @@ p {
   text-decoration: none;
   color: #29363d;
   display: block;
-  width: 288px;
+  /* width: 288px; */
   background: #fff;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -56,7 +56,38 @@ p {
 }
 
 .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 24px;
+  width: min(1224px, 100% - 60px);
+  margin: auto;
 }
 
 .container article {
+  width: calc((100% - (24px * 3)) / 4);
 }
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container article {
+    width: calc((100% - (24px * 2)) / 3);
+  }
+}
+
+@media (min-width: 501px) and (max-width: 640px) {
+  .container article {
+    width: calc((100% - 24px) / 2);
+  }
+}
+
+@media (max-width: 500px) {
+  .container article {
+    width: 100%;
+  }
+}
+
+/* 확인필요 */
+/* .container article {
+  flex-basis: 288px;
+  flex-grow: 0;
+  flex-shrink: 0;
+} */
