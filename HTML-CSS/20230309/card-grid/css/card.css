@@ -45,6 +45,7 @@ p {
   word-break: break-all;
   margin: 12px 0 16px;
   line-height: 20px;
+  /* 높이값 추가하였습니다 line-height : 20px 에 * 2줄 */
   height: 40px;
 }
 

@@ -73,10 +73,17 @@ p {
   /* margin: 0 24px 32px 0; */
 }
 
+@media (1025px <= width) {
+  /* 1025px 이상은 이 블록 안에 코드 적용 */
+}
 @media (min-width: 1025px) {
   .container article:nth-child(4n-3) {
     margin-left: 0;
   }
+}
+
+@media (641px <= width <= 1024px) {
+  /* 641px이상 1024px이하는 이 블록 안에 코드 적용 */
 }
 
 @media (min-width: 641px) and (max-width: 1024px) {
@@ -98,6 +105,7 @@ p {
 }
 
 @media (max-width: 500px) {
+  /* 641px이하는  이 블록 안에 코드 적용 */
   .container article {
     width: 100%;
     margin-left: 0;
