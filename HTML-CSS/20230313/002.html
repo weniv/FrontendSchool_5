@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>button 동적 가상선택자</title>
+  <style>
+    [class^="btn"] {
+      width: 88px;
+      height: 32px;
+      background: #343F50;
+      box-shadow: inset 1px 1px #4A5568;
+      border: 1px solid #1A202C;
+      color: #CBD5DF;
+      cursor: pointer;
+    }
+
+    [class^="btn"]:hover {
+      text-decoration: underline;
+      color: white;
+    }
+
+    /* .btn:not(:disabled):hover {
+      text-decoration: underline;
+      color: white;
+    } */
+
+    .btn:active {
+      box-shadow: inset 1px 1px #262F3E;
+    }
+
+    .btn:focus {
+      outline: none;
+      border: 1px solid #439AFF;
+    }
+
+    .btn:disabled {
+      box-shadow: none;
+      color: #4A5568;
+      text-decoration: none;
+      background: #3A4556;
+      border: 1px solid #343E4E;
+    }
+
+    [class$="positive"] {
+      color: #439AFF;
+    }
+
+    .btn-positive:hover,
+    .btn-positive:active {
+      background: #439AFF;
+      border: 1px solid #439AFF;
+    }
+
+    .btn-positive:hover {
+      box-shadow: inset 1px 1px #73B4FF;
+
+    }
+
+    .btn-positive:active {
+      box-shadow: inset 1px 1px #3B78BE
+    }
+
+
+    [class$="negative"] {
+      color: #EB5757;
+    }
+
+    .btn-negative:hover,
+    .btn-negative:active {
+      background: #EB5757;
+      border: 1px solid #EB5757;
+    }
+
+    .btn-negative:hover {
+      box-shadow: inset 1px 1px #FD6F6F;
+    }
+
+    .btn-negative:active {
+      box-shadow: inset 1px 1px #D94242
+    }
+  </style>
+</head>
+
+<body>
+  <button class="btn" type="button">Button</button>
+  <button class="btn-positive" type="button">Yes</button>
+  <button class="btn-negative" type="button">Del</button>
+  <button class="btn" type="button" disabled>Button</button>
+  <p class="message-negative">error 메시지</p>
+  <p class="message-positive">가입가능합니다</p>
+</body>
+
+</html>

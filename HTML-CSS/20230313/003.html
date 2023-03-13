@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>transform</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background: royalblue;
+
+    }
+
+    .transform:hover {
+      transform: scale(1.5, 1.0);
+    }
+
+    .transform:nth-child(2) {
+      transform-origin: top left;
+    }
+
+    .rotate:hover {
+      transform: rotate(45deg);
+      transform-origin: top left;
+    }
+
+    .translate:hover {
+      transform: translate(20px, 40px);
+    }
+
+    .skew:hover {
+      transform: skew(30deg, 20deg);
+    }
+
+    .mix:hover {
+      transform: translate(20px, 40px) rotate(135deg) skew(30deg, 20deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box transform">
+    box
+  </div>
+  <div class="box transform">
+    box
+  </div>
+
+  <div class="box rotate">
+    box
+  </div>
+
+  <div class="box translate">
+    box
+  </div>
+
+  <div class="box skew">
+    box
+  </div>
+  <div class="box mix">
+    box
+  </div>
+</body>
+
+</html>

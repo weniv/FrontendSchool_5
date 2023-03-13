@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>button</title>
+  <style>
+    button {
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: royalblue;
+    }
+
+    button:active {
+      background: salmon;
+    }
+
+    button:focus {
+      background: gold;
+    }
+
+    button:disabled {
+      background: black;
+    }
+
+    a:visited {
+      color: skyblue;
+    }
+
+    [title] {
+      text-decoration: line-through;
+    }
+
+    [href="#"] {
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="https://www.naver.com/" target="_blank" title="새창">네이버</a>
+  <a href="#" target="_blank" title="새창">카카오</a>
+  <a href="#" target="_blank" title="새창">구글</a>
+  <button type="button" title="트리거">버튼</button>
+  <button type="button">버튼</button>
+  <button type=" button" disabled>버튼</button>
+
+</body>
+
+</html>
