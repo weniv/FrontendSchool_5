@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>table</title>
+  <style>
+    table {
+      border: 3px solid #000;
+      border-collapse: collapse;
+      width: 100%;
+      table-layout: fixed;
+    }
+
+    caption {
+      caption-side: bottom;
+      margin-top: 20px;
+    }
+
+    th,
+    td {
+      border: 1px solid #000;
+      padding: 4px 16px;
+    }
+
+    .eng {
+      background: gold;
+    }
+
+    th {
+      background: #eee;
+    }
+
+    td {
+      text-align: center;
+    }
+
+    tfoot td {
+      font-weight: bold;
+    }
+
+    tfoot tr {
+      background: lime;
+    }
+
+    .col-first {
+      width: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <caption>2023학년도 대학수능능력시험 성적통지표</caption>
+    <colgroup>
+      <col class="col-first">
+      <col>
+      <col>
+      <col>
+      <col class="eng">
+      <col span="3">
+    </colgroup>
+    <thead>
+      <tr>
+        <th id="col1">구분</th>
+        <th id="col2" rowspan="2">한국사 영역</th>
+        <th id="col3">국어 영역</th>
+        <th id="col4">수학 영역</th>
+        <th id="col5" rowspan="2">영어 영역</th>
+        <th id="col6" colspan="2">탐구 영역</th>
+        <th id="col7">제 2 외국어<br> / 한문 영역</th>
+      </tr>
+      <tr>
+        <th id="col11">선택과목</th>
+        <th id="col31">화법과 작문</th>
+        <th id="col41">확률과 통계</th>
+        <th id="col61">생활과 윤리</th>
+        <th id="col62">지구 과학1</th>
+        <th id="col71">독일어</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th id="row1">표준점수</th>
+        <td headers="col2 row1" rowspan="2">&nbsp;</td>
+        <td headers="col3 col31 row1">131</td>
+        <td headers="col4 col41 row1">137</td>
+        <td headers="col5 row1" rowspan="2">&nbsp;</td>
+        <td headers="col6 col61 row1">53</td>
+        <td headers="col6 col62 row1">64</td>
+        <td headers="col7 col71 row1" rowspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <th id="row2">백분위</th>
+        <td headers="col3 col31 row2">93</td>
+        <td headers="col4 col41 row2">95</td>
+        <td>75</td>
+        <td>93</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <th id="row3">등급</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tfoot>
+  </table>
+</body>
+
+</html>

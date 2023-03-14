@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    textarea {
+      width: 100%;
+      resize: none;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <div>
+      <textarea placeholder="10자 이상 100자 이하로 내용을 입력해주세요" rows="3" maxlength="10"></textarea>
+    </div>
+    <label for="user-id">아이디</label>
+    <input id="user-id" type="email" placeholder="아이디를 입력해주세요" required>
+
+    <label for="user-pw">비밀번호</label>
+    <input id="user-pw" type="password">
+
+    <label>
+      아이디
+      <input type="text" value="frontend">
+    </label>
+
+    <fieldset>
+      <legend>제목</legend>
+      <label>
+        <input type="checkbox" disabled>프론트엔드 개발
+      </label>
+      <label>
+        <input type="checkbox">프론트엔드 개발
+      </label>
+      <label>
+        <input type="checkbox">프론트엔드 개발
+      </label>
+      <label>
+        <input type="checkbox">프론트엔드 개발
+      </label>
+    </fieldset>
+
+    <label for="lunch">오늘의 점심 메뉴:</label>
+    <select id="lunch">
+      <option value="lunch1">서브웨이</option>
+      <option value="lunch2">카레</option>
+      <option value="lunch3" selected>참치깁밥</option>
+      <option value="lunch4">지지고 누들</option>
+    </select>
+
+
+
+    <div>
+      <label for="user-front">여러분이 제일 자신있는 프론트엔드 기술을 선택해주세요</label>
+      <select id="user-front" name="user-tech">
+        <option value="html">HTML</option>
+        <option value="css" selected>CSS</option>
+        <option value="javascript">JavaScript</option>
+        <option value="react">React</option>
+        <option value="typescript">TypeScript</option>
+        <option value="sql" disabled>SQL</option>
+      </select>
+    </div>
+    <div>
+      <label for="user-tech">여러분이 사용해본 기술을 모두 선택해주세요</label>
+      <select id="user-tech" name="user-tech" multiple size="10">
+        <optgroup label="front-end">
+          <option value="html">HTML</option>
+          <option value="css">CSS</option>
+          <option value="javascript">JavaScript</option>
+          <option value="react">React</option>
+          <option value="typescript">TypeScript</option>
+        </optgroup>
+        <optgroup label="back-end">
+          <option value="nodejs">Node.js</option>
+          <option value="java">JAVA</option>
+          <option value="python">Python</option>
+          <option value="django">Django</option>
+        </optgroup>
+      </select>
+    </div>
+    <button type="submit">제출</button>
+  </form>
+
+
+
+</body>
+
+</html>

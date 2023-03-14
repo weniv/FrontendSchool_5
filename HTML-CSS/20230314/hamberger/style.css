@@ -21,6 +21,7 @@
 
 .line {
   display: block;
+  height: 100%;
   transition: all 0.2s;
 }
 .line span {
@@ -38,7 +39,7 @@
 
 .line span:nth-child(2) {
   top: 50%;
-  transform: translateY(-50%);
+  /* transform: translateY(-50%); */
 }
 
 .line span:nth-child(3) {
@@ -56,6 +57,8 @@
 .btn:hover .line span:nth-child(1) {
   top: 50%;
   transform: translateY(-50%) rotate(45deg);
+  /* transform: translateY(-50%);
+  transform: rotate(45deg); */
 }
 .btn:hover .line span:nth-child(2) {
   opacity: 0;
