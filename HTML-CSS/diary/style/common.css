@@ -1,0 +1,84 @@
+/* 공통 */
+body {
+  margin: 0;
+  background: #fffaf0;
+}
+
+/* layout ------------------------------- */
+/* header */
+header {
+  background-color: white;
+}
+.header-wrap {
+  width: 1224px;
+  margin: auto;
+  padding: 22px 0;
+}
+header .btn-logo {
+  height: 75px;
+}
+header .btn-join {
+  float: right;
+}
+
+/* button  */
+.btn-join {
+  /* display: block; */
+  padding: 1em 1em 1em 2.8em;
+  margin: 10px;
+  text-decoration: none;
+  color: #5a6a72;
+  background: url(../img/icon-join.svg) no-repeat 0.8em center/ 2em;
+}
+
+/* form */
+label,
+input,
+button {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input {
+  /* border-width: 0 0 1px 0;
+  border-color: #677880; */
+  border: none;
+  box-shadow: 0 1px 0 0 #677880;
+  height: 48px;
+  margin-bottom: 24px;
+  transition: box-shadow 0.2s;
+  border-radius: 4px 4px 0 0;
+  padding: 0 16px;
+}
+
+input:hover {
+  /* border-color: #2e6ff2;
+  border-bottom-width: 2px; */
+  box-shadow: 0 2px 0 0 #2e6ff2;
+}
+input:focus {
+  outline: none;
+  /* border: 2px solid #2e6ff2; */
+  box-shadow: 0 0 0 2px #2e6ff2;
+  border-radius: 4px;
+}
+
+label {
+  font-size: 14px;
+  color: #29363d;
+  margin-bottom: 8px;
+}
+
+button {
+  background: #29363d;
+  color: white;
+  height: 48px;
+  border: 0;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+button:disabled {
+  background-color: #9fa9ae;
+}

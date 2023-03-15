@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+}
+header {
+  background-color: white;
+}
+.header-wrap {
+  width: 1224px;
+  margin: auto;
+  padding: 22px 0;
+}
+header .btn-logo {
+  height: 75px;
+}
+header .btn-join {
+  float: right;
+}
+.btn-join {
+  /* display: block; */
+  padding: 1em 1em 1em 2.8em;
+  margin: 10px;
+  text-decoration: none;
+  color: #5a6a72;
+  background: url(../img/icon-join.svg) no-repeat 0.8em center/ 2em;
+}
+
+/* main */
+main {
+  width: 392px;
+  margin: 71px auto 52px;
+}
+main h1 {
+  text-align: center;
+  font-size: 24px;
+}
+main h1 img {
+  display: block;
+  height: 120px;
+  margin: auto;
+  margin-bottom: 29px;
+}
+main h1 strong {
+  box-shadow: inset 0 -0.6em rgba(255, 79, 110, 0.2);
+  border-bottom: 2px solid #ff4f6e;
+}
+
+footer p {
+  text-align: center;
+  font-size: 12px;
+  color: #677880;
+}

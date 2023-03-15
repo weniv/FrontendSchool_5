@@ -1,27 +1,3 @@
-body {
-  margin: 0;
-}
-header {
-  background-color: white;
-}
-.header-wrap {
-  width: 1224px;
-  margin: auto;
-  padding: 22px 0;
-}
-header .btn-logo {
-  height: 75px;
-}
-header .btn-join {
-  display: block;
-  padding: 1em 1em 1em 2.8em;
-  margin: 10px;
-  float: right;
-  text-decoration: none;
-  color: #5a6a72;
-  background: url(../img/icon-join.svg) no-repeat 0.8em center/ 2em;
-}
-
 /* main */
 main {
   width: 392px;
