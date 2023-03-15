@@ -26,3 +26,6 @@ main {
   width: 392px;
   margin: 71px auto 52px;
 }
+.form-wrap input {
+  margin-bottom: 24px;
+}

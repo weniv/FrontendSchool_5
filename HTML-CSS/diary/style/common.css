@@ -5,9 +5,10 @@ body {
 }
 
 /* a-button  */
-.btn-join,
+/* .btn-join,
 .btn-login,
-.btn-logout {
+.btn-logout */
+[class^="btn"] {
   display: inline-block;
   padding: 1em 1em 1em 2.8em;
   text-decoration: none;
@@ -82,12 +83,13 @@ header {
 }
 .header-wrap {
   width: 1224px;
+  height: 120px;
+  max-width: calc(100% - 60px);
   margin: auto;
-  padding: 22px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-header .btn-logo {
+.logo {
   height: 75px;
-}
-header .btn-join {
-  float: right;
 }
