@@ -4,6 +4,16 @@ body {
   background: #fffaf0;
 }
 
+/* button  */
+.btn-join {
+  /* display: block; */
+  padding: 1em 1em 1em 2.8em;
+  margin: 10px;
+  text-decoration: none;
+  color: #5a6a72;
+  background: url(../img/icon-join.svg) no-repeat 0.8em center/ 2em;
+}
+
 /* layout ------------------------------- */
 /* header */
 header {
@@ -19,16 +29,6 @@ header .btn-logo {
 }
 header .btn-join {
   float: right;
-}
-
-/* button  */
-.btn-join {
-  /* display: block; */
-  padding: 1em 1em 1em 2.8em;
-  margin: 10px;
-  text-decoration: none;
-  color: #5a6a72;
-  background: url(../img/icon-join.svg) no-repeat 0.8em center/ 2em;
 }
 
 /* form */
