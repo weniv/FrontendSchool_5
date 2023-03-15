@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>일기쓰기 | 두근두근 비밀일기</title>
+  <link rel="stylesheet" href="./style/common.css">
+  <link rel="stylesheet" href="./style/main.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-wrap">
+      <h1><a href="#"><img class="logo" src="img/logo.svg" alt="두근두근 비밀일기"></a></h1>
+      <div>
+        <p class="hello">환영합니다 <strong>홍길동</strong>님!</p>
+        <a href="#" class="btn-logout">로그아웃</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <h2 class="heart">2023.02.27의 비밀일기</h2>
+
+    <form>
+      <label class="a11y-hidden" for="diary-title">제목</label>
+      <input class="input-style" id="diary-title" type="text" placeholder="제목" required>
+
+      <textarea class="diary-textarea" placeholder="오늘의 비밀은 무엇인가요?"></textarea>
+
+      <button class="black-btn" type="submit">작성하기</button>
+    </form>
+  </main>
+</body>
+
+</html>

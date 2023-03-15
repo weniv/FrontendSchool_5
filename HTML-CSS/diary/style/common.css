@@ -4,6 +4,17 @@ body {
   background: #fffaf0;
 }
 
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
 /* a-button  */
 /* .btn-join,
 .btn-login,
@@ -59,6 +70,7 @@ body {
   transition: all 0.2s;
   border-radius: 4px 4px 0 0;
   padding: 0 16px;
+  font-size: 16px;
 }
 
 .input-style:hover {
@@ -92,4 +104,15 @@ header {
 }
 .logo {
   height: 75px;
+}
+.hello {
+  display: inline-block;
+}
+.hello strong {
+  box-shadow: inset 0 -0.6em rgba(255, 79, 110, 0.5);
+}
+.hello::after {
+  content: "|";
+  color: #d8ddde;
+  margin-left: 24px;
 }

@@ -1,0 +1,19 @@
+.heart {
+  font-size: 16px;
+  background: url(../img/heart.svg) no-repeat 0 center / 1.4em;
+  padding-left: 1.4em;
+}
+.diary-textarea {
+  /* vertical-align: top;*/
+  display: block;
+  width: 100%;
+  height: 360px;
+  resize: none;
+  padding: 16px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: inherit;
+}
+.diary-textarea::placeholder {
+  font-size: inherit;
+}
