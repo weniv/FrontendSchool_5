@@ -115,6 +115,19 @@ h3 {
   min-height: calc(100vh - 120px);
   box-sizing: border-box;
 }
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    gap: 0;
+  }
+  .container main {
+    border-right: 0;
+    padding-right: 0;
+    min-height: auto;
+  }
+}
+
 .container section {
   padding-top: 94px;
 }
