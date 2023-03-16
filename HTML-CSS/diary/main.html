@@ -13,10 +13,10 @@
 <body>
   <header>
     <div class="header-wrap">
-      <h1><a href="#"><img class="logo" src="img/logo.svg" alt="두근두근 비밀일기"></a></h1>
+      <h1><a href="./"><img class="logo" src="img/logo.svg" alt="두근두근 비밀일기"></a></h1>
       <div>
         <p class="hello">환영합니다 <strong>홍길동</strong>님!</p>
-        <a href="#" class="btn-logout">로그아웃</a>
+        <a href="index.html" class="btn-logout">로그아웃</a>
       </div>
     </div>
   </header>
@@ -26,10 +26,11 @@
       <h2 class="heart">2023.02.27의 비밀일기</h2>
 
       <form>
-        <label class="a11y-hidden" for="diary-title">제목</label>
+        <label class="a11y-hidden" for="diary-title">일기 제목</label>
         <input class="input-style" id="diary-title" type="text" placeholder="제목" required>
 
-        <textarea class="diary-textarea" placeholder="오늘의 비밀은 무엇인가요?"></textarea>
+        <label class="a11y-hidden" for="diary-content">일기 내용</label>
+        <textarea class="diary-textarea" id="diary-content" placeholder="오늘의 비밀은 무엇인가요?"></textarea>
         <button class="black-btn" type="submit">작성하기</button>
       </form>
     </main>
