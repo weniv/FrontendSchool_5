@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <style>
+        .container {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            margin-top: 500px;
+            margin-left: 500px;
+        }
+
+        .y {
+            position: absolute;
+            transform: rotate(270deg);
+            top: -300px;
+            left: -250px;
+            width: 500px;
+        }
+
+        .z {
+            position: absolute;
+            transform: rotate(140deg);
+            top: 78px;
+            left: -352px;
+            width: 400px;
+        }
+
+        .line {
+            display: flex;
+            gap: 0.5em;
+            align-items: center;
+            margin: 50px 0;
+        }
+
+        .line::before {
+            content: ' ';
+            flex-grow: 1;
+            height: 3px;
+            background-color: black;
+        }
+
+        .box-container {
+            /* 주석을 풀어보세요. */
+            /* perspective: 500px; */
+            position: relative;
+            top: -260px;
+            width: 200px;
+            height: 200px;
+            background-color: darkcyan;
+            opacity: 0.3;
+        }
+
+        .box {
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 220px;
+            height: 220px;
+            background-color: black;
+            opacity: 0.7;
+            /* Chrome 개발자 도구 열어서 수치를 증가시켜보세요. */
+            transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="line x">line x</div>
+        <div class="line y">line y</div>
+        <div class="line z">line z</div>
+        <div class="box-container">
+            <div class="box"></div>
+        </div>
+    </div>
+</body>
+
+</html>
