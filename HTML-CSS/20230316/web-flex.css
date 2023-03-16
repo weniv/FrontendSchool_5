@@ -1,42 +1,45 @@
-/* 레이아웃 */
+/* layout */
 .container {
-  display: grid;
-  grid-template-areas:
-    "a b"
-    "a c";
-  gap: 20px;
+  display: flex;
 }
-.grid-a {
-  grid-area: a;
+.container .section-text {
+  flex-grow: 1;
 }
 
-.grid-b {
-  grid-area: b;
-}
-
-.grid-c {
-  grid-area: c;
-}
-
-@media (max-width: 1200px) {
-  .container {
-    grid-template-areas:
-      "a a"
-      "b c";
+@media (min-width: 1200px) {
+  .container .container2 {
+    flex-basis: 486px;
+    flex-shrink: 0;
   }
 }
-@media (min-width: 769px) and (max-width: 1200px) {
+@media (max-width: 1199px) {
   .container {
-    grid-template-columns: 1fr 1fr;
+    flex-direction: column;
+    /* 변동값 60 40 */
+    gap: 60px;
+  }
+}
+.container2 {
+  display: flex;
+  flex-direction: column;
+  /* 변동값 20 20 14 */
+  gap: 20px;
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .container2 {
+    flex-direction: row;
+  }
+  .container2 .link1,
+  .container2 .link2 {
+    flex-grow: 1;
+    flex-basis: 0;
   }
 }
 
 @media (max-width: 768px) {
-  .container {
-    grid-template-areas:
-      "a"
-      "b"
-      "c";
+  .container2 {
+    /* 변동값 20 20 14 */
     gap: 14px;
   }
 }
@@ -48,7 +51,7 @@
   min-width: 400px;
 }
 
-.grid-a h1 {
+.section-text h1 {
   color: #121314;
   font-weight: normal;
 
@@ -56,7 +59,7 @@
   font-size: 70px;
 }
 
-.grid-a p {
+.section-text p {
   color: #47494d;
 
   /* 변동값 20 18 14 */
@@ -65,8 +68,8 @@
   /* 변동값 20 20 14 */
   margin-top: 20px;
 }
-.grid-b,
-.grid-c {
+.link1,
+.link2 {
   border-radius: 20px;
   color: white;
   aspect-ratio: 486 / 280;
@@ -80,21 +83,21 @@
   flex-direction: column;
   justify-content: space-between;
 }
-.grid-b {
+.link1 {
   background: url(./webimg/background1.jpg) no-repeat 0 0 / cover;
 }
-.grid-c {
+.link2 {
   background: url(./webimg/background2.jpg) no-repeat 0 0 / cover;
 }
 
-.grid-b strong,
-.grid-c strong {
+.link1 strong,
+.link2 strong {
   /* 변동값 30 24 20 */
   font-size: 30px;
 }
 
-.grid-b span,
-.grid-c span {
+.link1 span,
+.link2 span {
   align-self: flex-end;
 }
 
@@ -121,12 +124,12 @@
 }
 
 @media (max-width: 1200px) {
-  .grid-a p {
+  .section-text p {
     /* 변동값 20 18 14 */
     font-size: 18px;
   }
-  .grid-b,
-  .grid-c {
+  .link1,
+  .link2 {
     /* 변동값 
 		40px 30px 30px 40px
 		30px 20px 20px 30px
@@ -135,26 +138,26 @@
     padding: 30px 20px 20px 30px;
   }
 
-  .grid-b strong,
-  .grid-c strong {
+  .link1 strong,
+  .link2 strong {
     /* 변동값 30 24 20 */
     font-size: 24px;
   }
 }
 @media (max-width: 768px) {
-  .grid-a h1 {
+  .section-text h1 {
     /* 변동값 70 70 36 */
     font-size: 36px;
   }
-  .grid-a p {
+  .section-text p {
     /* 변동값 20 18 14 */
     font-size: 14px;
 
     /* 변동값 20 20 14 */
     margin-top: 14px;
   }
-  .grid-b strong,
-  .grid-c strong {
+  .link1 strong,
+  .link2 strong {
     /* 변동값 30 24 20 */
     font-size: 20px;
   }
