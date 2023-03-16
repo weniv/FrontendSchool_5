@@ -8,17 +8,14 @@
 }
 
 .grid-a {
-  background-color: aqua;
   grid-area: a;
 }
 
 .grid-b {
-  background-color: gold;
   grid-area: b;
 }
 
 .grid-c {
-  background-color: seagreen;
   grid-area: c;
 }
 
@@ -44,15 +41,137 @@
     gap: 14px;
   }
 }
-body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 /* style */
 .container {
   width: 1200px;
   max-width: calc(100% - 60px);
+  min-width: 400px;
+}
+
+.grid-a h1 {
+  color: #121314;
+  font-weight: normal;
+
+  /* 변동값 70 70 36*/
+  font-size: 70px;
+}
+
+.grid-a p {
+  color: #47494d;
+
+  /* 변동값 20 18 14 */
+  font-size: 20px;
+
+  /* 변동값 20 20 14 */
+  margin-top: 20px;
+}
+.grid-b,
+.grid-c {
+  border-radius: 20px;
+  color: white;
+  aspect-ratio: 486 / 280;
+  /* 변동값 
+		40px 30px 30px 40px
+		30px 20px 20px 30px
+		30px 20px 20px 30px
+	 */
+  padding: 40px 30px 30px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.grid-b {
+  background: url(./webimg/background1.jpg) no-repeat 0 0 / cover;
+}
+.grid-c {
+  background: url(./webimg/background2.jpg) no-repeat 0 0 / cover;
+}
+
+.grid-b strong,
+.grid-c strong {
+  /* 변동값 30 24 20 */
+  font-size: 30px;
+}
+
+.grid-b span,
+.grid-c span {
+  align-self: flex-end;
+}
+
+/* 가상 요소를 사용한 방법 */
+/* 
+  .go-after::after {
+    content: ">";
+  } 
+*/
+.go-after::after {
+  content: "";
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  border: 1px solid #fff;
+  border-width: 2px 2px 0 0;
+  transform: rotate(45deg);
+  margin-left: 0.2em;
+  border-radius: 0.1em;
+}
+.go-bg {
+  padding-right: 1.2em;
+  background: url(./webimg/arrow.svg) no-repeat 100% center / 1.2em;
+}
+
+@media (max-width: 1200px) {
+  .grid-a p {
+    /* 변동값 20 18 14 */
+    font-size: 18px;
+  }
+  .grid-b,
+  .grid-c {
+    /* 변동값 
+		40px 30px 30px 40px
+		30px 20px 20px 30px
+		30px 20px 20px 30px
+	 */
+    padding: 30px 20px 20px 30px;
+  }
+
+  .grid-b strong,
+  .grid-c strong {
+    /* 변동값 30 24 20 */
+    font-size: 24px;
+  }
+}
+@media (max-width: 768px) {
+  .grid-a h1 {
+    /* 변동값 70 70 36 */
+    font-size: 36px;
+  }
+  .grid-a p {
+    /* 변동값 20 18 14 */
+    font-size: 14px;
+
+    /* 변동값 20 20 14 */
+    margin-top: 14px;
+  }
+  .grid-b strong,
+  .grid-c strong {
+    /* 변동값 30 24 20 */
+    font-size: 20px;
+  }
+}
+
+@media (min-height: 820px) {
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-height: 819px) {
+  .container {
+    margin: 40px auto;
+  }
 }
