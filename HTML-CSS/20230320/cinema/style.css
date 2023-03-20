@@ -1,0 +1,167 @@
+/* reset */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+button {
+  padding: 0;
+  margin: 0;
+}
+button {
+  border: 0;
+  background: none;
+  font: inherit;
+}
+button:not(:disabled) {
+  cursor: pointer;
+}
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* header */
+h1 {
+  font-size: 24px;
+  text-align: center;
+  width: 650px;
+  border-bottom: 2px solid #bdbdbd;
+  /* padding: 0 0 37px 0; */
+  padding-bottom: 37px;
+  margin: auto;
+}
+.cinema-nav ul {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 18px;
+}
+.cinema-nav button {
+  padding: 10px 20px;
+  color: #828282;
+}
+.cinema-nav button.active {
+  font-weight: bold;
+  color: #000;
+}
+
+/* article */
+.cinema-card {
+  border: 1px solid #bdbdbd;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+.cinema-contents {
+  padding: 19px 20px 18px;
+}
+
+.cinema-contents img {
+  border: 1px solid #bdbdbd;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  aspect-ratio: 180 / 250;
+  width: 100%;
+  object-fit: cover;
+}
+.cinema-title {
+  font-size: 16px;
+  margin: 12px 0;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.cinema-info {
+  font-size: 13px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 5px;
+}
+.cinema-info li {
+}
+.cinema-info li :first-child {
+  color: #828282;
+  margin-right: 5px;
+}
+
+.tit + .ellipsis {
+  float: right;
+  width: 150px;
+}
+.star {
+  background: url(./img/icon-star.svg) no-repeat 0 0 / 1em;
+  padding-left: 1.3em;
+}
+
+.button-group {
+  border-top: 1px solid #bdbdbd;
+  display: flex;
+}
+.button-group a,
+.button-group button {
+  background: #f2f2f2;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.button-group a {
+  border-right: 1px solid #bdbdbd;
+  border-radius: 0 0 0 10px;
+}
+.button-group a:focus {
+  z-index: 1;
+}
+.button-group button {
+  border-radius: 0 0 10px 0;
+}
+.button-group button::before {
+  content: "";
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  background: url(./img/icon-play.svg) no-repeat 0 50% / 1em;
+}
+
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 24px 23px;
+  border: 2px solid #bdbdbd;
+  border-radius: 15px;
+  background: #fff;
+  padding: 30px;
+  margin-top: 28px;
+}
+
+.wrap {
+  border: 2px solid #bdbdbd;
+  border-radius: 15px;
+  background: #f2f2f2;
+  padding: 40px 30px 30px;
+  width: 1060px;
+  margin: 86px auto 135px;
+}
