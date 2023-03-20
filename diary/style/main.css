@@ -134,3 +134,40 @@ h3 {
 .container section ul li {
   margin-bottom: 76px;
 }
+
+.button-group {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background: #fff;
+  border: 1px solid #677880;
+  width: 111px;
+  height: 40px;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-group button {
+  width: 32px;
+  height: 32px;
+  background: none;
+  padding: 0;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+.button-group button:hover {
+  opacity: 1;
+}
+.button-group button img {
+  width: 100%;
+}
+.button-group span {
+  display: inline-block;
+  width: 1px;
+  height: 16px;
+  background: #d8ddde;
+  margin: 0 4px;
+}
