@@ -1,0 +1,88 @@
+.custom-input,
+.custom-input2,
+.custom-radio {
+  appearance: none;
+  width: 1.4em;
+  height: 1.4em;
+  margin: 0 4px 3px 0;
+  vertical-align: middle;
+  transition: all 0.3s;
+}
+.custom-input {
+  background: url(./img/check1.svg) no-repeat center / 90%;
+}
+.custom-input:checked {
+  background-image: url(./img/check1-checked.svg);
+}
+.custom-input:checked + label,
+.custom-input2:checked + label {
+  font-weight: bold;
+  color: royalblue;
+}
+
+.custom-input2 {
+  background: url(./img/check2.svg) no-repeat center / 90%;
+}
+.custom-input2:checked {
+  background-image: url(./img/check2-checked.svg);
+}
+.custom-radio {
+  background: url(./img/radio.svg) no-repeat center / 90%;
+}
+.custom-radio:checked {
+  background-image: url(./img/radio-checked.svg);
+}
+
+/* select */
+select {
+  color: inherit;
+}
+.custom-select1 {
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #c4c4c4;
+  padding: 0 14px;
+  appearance: none;
+  background: url(./img/select.svg) no-repeat calc(100% - 15px) / 1em;
+  font-size: 14px;
+}
+
+.custom-select1:focus {
+  outline: none;
+  border-color: #9b51e0;
+  box-shadow: 0 0 0 3px #f8e4ff;
+}
+
+/* custom-select */
+button {
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+}
+button,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+ul,
+li {
+  list-style: none;
+}
+.custom-select > button {
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #c4c4c4;
+  padding: 0 14px;
+  background: url(./img/select.svg) no-repeat calc(100% - 15px) / 1em;
+  font-size: 14px;
+  text-align: left;
+}
+.custom-select > button:focus {
+  outline: none;
+  border-color: #9b51e0;
+  box-shadow: 0 0 0 3px #f8e4ff;
+}
