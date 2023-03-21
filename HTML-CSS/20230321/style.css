@@ -149,3 +149,48 @@ section {
   padding: 0 8px;
   transform: rotate(-20deg) translate(-10px, 30px);
 }
+
+/* 잔액 및 장바구니 */
+.container {
+  display: grid;
+  grid-template-columns: auto calc((100% - 24px) / 3);
+  grid-template-rows: 32px 32px 106px;
+  gap: 12px;
+}
+.bg-box {
+  background: #eae8fe;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+}
+.bg-box .title,
+.bg-box p {
+  font-size: 14px;
+  font-weight: 500;
+}
+.bg-box .title::after {
+  content: " :";
+}
+
+/* section2 */
+.section2 {
+  padding: 9px 27px;
+}
+
+.btn {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+#input-money {
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  padding: 0 6px;
+  font-size: 13px;
+}
+#input-money::placeholder {
+  color: #bdbdbd;
+}
