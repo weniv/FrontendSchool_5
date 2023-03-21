@@ -89,16 +89,15 @@ h1 {
   gap: 5px;
 }
 .cinema-info li {
+  overflow: hidden;
+  display: flex;
+  gap: 5px;
 }
 .cinema-info li :first-child {
   color: #828282;
-  margin-right: 5px;
+  flex-shrink: 0;
 }
 
-.tit + .ellipsis {
-  float: right;
-  width: 150px;
-}
 .star {
   background: url(./img/icon-star.svg) no-repeat 0 0 / 1em;
   padding-left: 1.3em;
