@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .txt-hide {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+
+        .labl-hold {
+            display: inline-block;
+            margin: 20px 0;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .labl-hold::before {
+            content: '';
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            margin-right: 10px;
+            vertical-align: -5px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" id="inpHold" class="inp-hold txt-hide">
+    <label for="inpHold" class="labl-hold">로그인 상태 유지</label>
+    <!-- 형태-의미-상태 -->
+
+</body>
+
+</html>
