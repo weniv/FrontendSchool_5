@@ -1,0 +1,105 @@
+/* 모듈 */
+/* 로그인 버튼 모듈 */
+.btn-login {
+    width: 100%;
+    padding: 17px 0 15px;
+    line-height: 28px;
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background: #2F80ED;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-close {
+    /* width: 16px;
+    height: 16px; */
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* 인풋 모듈 */
+.module-inp .inp-login {
+    display: block;
+    width: 100%;
+    padding: 15px 16px 15px;
+    border: 1px solid #C4C4C4;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.module-inp.module-inp-id.error .inp-login {
+    position: relative;
+    border: 2px solid #F4492E;
+}
+
+.module-inp .inp-error {
+    display: none;
+    margin: 6px 0 0 4px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #F4492E;
+    text-align: left;
+}
+
+.module-inp.error .inp-error {
+    display: block;
+
+}
+
+.module-inp~.module-inp {
+    margin-top: 10px;
+}
+
+/* 소셜 로그인 버튼 모듈 */
+.link-sns-login {
+    display: block;
+    padding: 15px 14px;
+    border: 1px solid #767676;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #767676;
+}
+
+[class^="icon"]::before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 22px;
+    height: 22px;
+}
+
+.link-sns-login.icon-facebook {
+    border: 1px solid #2D9CDB;
+}
+
+.link-sns-login.icon-naver {
+    border: 1px solid #00BF18;
+}
+
+.link-sns-login.icon-kakao {
+    border: 1px solid #F2C94C;
+}
+
+.icon-google::before {
+    background: url("images_login/icon_google.png") no-repeat;
+}
+
+.icon-naver::before {
+    background: url("images_login/icon_naver.png") no-repeat;
+}
+
+.icon-kakao::before {
+    background: url("images_login/icon_kakao.png") no-repeat;
+}
+
+.icon-facebook::before {
+    height: 24px;
+    background: url("images_login/icon_facebook.png") center no-repeat;
+}
