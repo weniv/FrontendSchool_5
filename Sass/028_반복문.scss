@@ -1,0 +1,11 @@
+$hojun: 6;
+
+@while $hojun >1 {
+    $hojun: $hojun - 1;
+
+    .content-#{$hojun} {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+}

@@ -1,0 +1,43 @@
+.photo-box:nth-child(1) {
+  background-image: url("../assets/phoster1.png");
+}
+
+.photo-box:nth-child(2) {
+  background-image: url("../assets/phoster2.png");
+}
+
+.photo-box:nth-child(3) {
+  background-image: url("../assets/phoster3.png");
+}
+
+.photo-box:nth-child(4) {
+  background-image: url("../assets/phoster4.png");
+}
+
+.photo-box:nth-child(5) {
+  background-image: url("../assets/phoster5.png");
+}
+
+.photo-box:nth-child(10) {
+  background-image: url("../assets/img_10.png");
+}
+
+.photo-box:nth-child(11) {
+  background-image: url("../assets/img_11.png");
+}
+
+.photo-box:nth-child(12) {
+  background-image: url("../assets/img_12.png");
+}
+
+.photo-box:nth-child(13) {
+  background-image: url("../assets/img_13.png");
+}
+
+.photo-box:nth-child(14) {
+  background-image: url("../assets/img_14.png");
+}
+
+.photo-box:nth-child(15) {
+  background-image: url("../assets/img_15.png");
+}/*# sourceMappingURL=026_반복문.css.map */

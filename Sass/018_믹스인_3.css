@@ -1,0 +1,15 @@
+.card {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: blue;
+}
+
+.profile {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 10%;
+  background-color: red;
+}/*# sourceMappingURL=018_믹스인_3.css.map */

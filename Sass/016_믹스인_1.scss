@@ -1,0 +1,49 @@
+// before
+// .card{
+// 	display : flex;
+// 	justify-content : center;
+// 	align-items : center;
+// 	background : gray;
+// }
+
+// .aside {
+// 	display : flex;
+// 	justify-content : center;
+// 	align-items : center;
+// 	background : white;
+// }
+// /*.card와 .aside 클래스 선택자의 적용한 스타일이 겹침*/
+
+// after
+// @mixin center-xy{
+// 	display: flex;
+// 	justify-content : center;
+// 	align-items : center;
+// }
+
+// .card{
+// 	@include center-xy; // 정의한 center-xy mixin을 사용하여 코드 한줄이면 끝!
+//     background: gray;
+// }
+
+// .aside{
+// 	@include center-xy;
+//     background: white;
+// }
+
+@mixin box {
+    width: 100px;
+    height: 100px;
+}
+
+// blue
+.card {
+    @include box;
+    background-color: blue;
+}
+
+// red
+.profile {
+    @include box;
+    background-color: red;
+}

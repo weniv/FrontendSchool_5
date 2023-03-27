@@ -1,0 +1,30 @@
+@mixin button($color) {
+    @if $color ==black {
+        font-size: 32px;
+        background-color: white;
+    }
+
+    @else if $color ==white {
+        font-size: 24px;
+        background-color: black;
+    }
+
+    @else if $color ==green {
+        font-size: 24px;
+        background-color: black;
+    }
+
+    @else {
+        font-size: 16px;
+        background-color: blue;
+    }
+}
+
+// 1. if 단독
+// 2. if / else
+// 3. if / elif / else
+// 4. if / elif / elif .... / else
+
+.btn {
+    @include button(black); // 파선아실
+}

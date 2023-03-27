@@ -1,0 +1,10 @@
+.base-box, .box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 10%;
+}
+
+.box {
+  border: 10px solid black;
+}/*# sourceMappingURL=021_extend.css.map */

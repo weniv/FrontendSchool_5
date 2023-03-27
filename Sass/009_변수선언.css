@@ -1,0 +1,19 @@
+.test {
+  background-image: url("./assets/img/background.png");
+}
+
+.title {
+  font-size: 40px;
+}
+
+.title2 {
+  font-size: 19px;
+}
+
+.title3 {
+  font-size: #f00;
+}
+
+.title4 {
+  font-size: 80px;
+}/*# sourceMappingURL=009_변수선언.css.map */

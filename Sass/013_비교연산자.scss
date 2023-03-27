@@ -1,0 +1,11 @@
+$value: 32px;
+
+p {
+    @if ($value >=32px) {
+        letter-spacing: 1rem;
+    }
+
+    @else {
+        letter-spacing: 0.5rem;
+    }
+}

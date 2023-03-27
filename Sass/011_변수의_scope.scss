@@ -1,0 +1,15 @@
+$value: blue;
+
+.one {
+    // 권장하지 않습니다.
+    $value: red !global;
+    color: $value;
+
+    .three {
+        background-color: $value;
+    }
+}
+
+.two {
+    color: $value
+}
