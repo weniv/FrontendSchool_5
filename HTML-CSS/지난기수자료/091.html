@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ani-count, infinite</title>
+    <style>
+        @keyframes yoon {
+            from {transform: translate(100px, 0);}
+            to {transform: translate(300px, 0);}
+        }
+
+        div {
+            position: absolute;
+            margin: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: #ff0000;
+            /* 애니메이션 속성 */
+            animation-name: yoon;
+            animation-duration: 1s;
+        }
+        /* [ 재생횟수가 0인 경우 ] */
+        .iteration-count_0 {
+            top: 20px;
+            animation-iteration-count: 0;
+        }
+        /* [ 재생횟수가 음수인 경우 ] */
+        .iteration-count_minus {
+            top: 130px;
+            animation-iteration-count: -3;
+        }
+        /* [ 재생횟수가 양수인 경우 ] */
+        .iteration-count_plus {
+            top: 240px;
+            animation-iteration-count: 3;
+        }
+        /* [ 재생횟수가 유리수인 경우 ] */
+        .iteration-count_rational {
+            top: 350px;
+            animation-iteration-count: 1.5;
+        }
+        /* [ 애니메이션을 무한 반복할 경우 ] */
+        .iteration-count_infinite {
+            top: 460px;
+            animation-iteration-count: infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="iteration-count_0">0</div>
+    <div class="iteration-count_minus">minus</div>
+    <div class="iteration-count_plus">plus</div>
+    <div class="iteration-count_rational">rational</div>
+    <div class="iteration-count_infinite">infinite</div>
+</body>
+</html>

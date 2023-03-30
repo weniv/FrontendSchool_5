@@ -1,0 +1,69 @@
+@keyframes object-rotate {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        /* turn이라는 단위는 정확히 한 바퀴를 돌리라는 의미입니다. */
+        transform: rotateY(1turn);
+    }
+}
+
+@keyframes scene-rotate {
+    0% {
+        transform: rotateX(0) rotateZ(0);
+    }
+    100% {
+        transform: rotateX(10deg) rotateZ(-20deg);
+    }
+}
+
+body {
+    width: 100vh;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.2);
+}
+
+.scene {
+    transform-style: preserve-3d;
+    /* 나중에 회전 */
+    animation: scene-rotate 10s linear infinite alternate;
+
+}
+
+.planet {
+    position: absolute;
+    top: -400px;
+    left: -400px;
+    width: 800px;
+    height: 800px;
+    background-color: #783c00;
+    border-radius: 50%;
+    box-shadow: 0 0 300px;
+}
+
+.circle {
+    font-size: 50px;
+    font-weight: bold;
+    /* 나중에 작성 */
+    animation: object-rotate 15s linear infinite;
+    transform-style: preserve-3d;
+}
+.circle .word {
+    transform-style: preserve-3d;
+}
+.circle span {
+    /* background-color: goldenrod; */
+    position: absolute;
+    transform: rotateY(calc(var(--char-index)*2deg)) translateZ(3500px);
+}

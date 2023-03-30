@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  @keyframes hojun {
+    from{
+      background-position: 0px, 0px;
+    }
+    to {
+      background-position: -3730px, 0;
+    }
+  }
+  .building1{
+    width: 110px;
+    height: 180px;
+    background: url('building/building1.png') no-repeat;
+    animation: hojun 5s steps(33);
+    /* animation: hojun 5s; */
+    animation-fill-mode: forwards;
+  }
+  </style>
+</head>
+<body>
+  <div class="building1"></div>
+</body>
+</html>
