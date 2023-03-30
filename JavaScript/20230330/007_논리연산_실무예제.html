@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        // 3, 6, 9, 12, 15, 18
+        // 5, 10, 15
+
+        // https://codingdojang.com/scode/350#answer-filter-area
+        for (let i = 0; i < 101; i++) {
+            // console.log(i)
+            if (i % 3 == 0 && i % 5 == 0){
+                console.log(i)
+            }
+        }
+
+        for (let i = 0; i < 101; i++) {
+            // console.log(i)
+            if (i % 3 == 0 || i % 5 == 0){
+                console.log(i)
+            }
+        }
+
+        let x = 0
+        for (let i = 0; i < 1001; i++) {
+            // console.log(i)
+            if (i % 3 == 0 || i % 5 == 0){
+                x = x + i
+            }
+        }
+        console.log(x)
+    </script>
+</body>
+</html>

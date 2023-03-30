@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        let txt = 'abcdefghij'
+
+        // slice(시작인덱스, 종료인덱스) : 시작인덱스부터 종료인덱스 - 1번째 까지 반환합니다.
+        console.log(txt.slice(1, 3)) // start, end(-1)
+        console.log(txt.slice(3)) // start
+        console.log(txt.slice(3, 1)) // 안됩니다.
+        // console.log(txt.slice(2, -3)) // -3이라는 것을 인식해서 2번째부터 -3번째 이전까지 잘라낸 'cdefg'
+
+        // substring(시작인덱스, 종료인덱스) : 시작인덱스부터 종료인덱스 - 1번째 까지 반환합니다.
+        console.log(txt.substring(1, 3))
+        console.log(txt.substring(3))
+        console.log(txt.substring(3, 1)) // 작동합니다. slice와 차이가 있습니다.
+        // console.log(txt.substring(2, -3)) //마이너스 값을 0으로 인식해서 txt.substring(2, 0)가 됩니다. 바로 위 예제와 비교해보세요.
+
+        // https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/substr
+        // substr는 지원이 중단된 문법입니다.
+
+        let txt2 = 'paullab CEO leehojun CEO'
+
+        console.log(txt2.replace('CEO', 'COO'))
+        console.log(txt2.replace(/CEO/g, 'COO'))
+        // 구 브라우저 지원이 안될 가능성이 큼, 회사가서 확인하세요.
+        // 21년도에 추가되었습니다.
+        console.log(txt2.replaceAll('CEO', 'COO'))
+
+        console.log(txt2.toLowerCase())
+        console.log(txt2.toUpperCase())
+
+        // 많이 사용됩니다. 특히 알고리즘 문제에서요.
+        console.log(txt2.includes('CEO'))
+        console.log(txt2.includes('CDO'))
+
+        // 메서드 채이닝
+        txt2.replace('CEO', 'CDO').includes('CDO').toString().toUpperCase()
+
+        // 어디서나 정말 많이 사용되는 메서드 입니다.
+        txt2.split(' ')
+
+        let text1 = 'aa bb cc dd'
+        let text2 = 'aa-bb-cc-dd'
+        let text3 = 'aa,bb,cc,dd'
+        let text4 = 'aa,bb-cc-dd' // 중급자 분들만 하세요.
+        // ['aa', 'bb', 'cc', 'dd']
+
+        console.log(text1.split(' '))
+        console.log(text2.split('-'))
+        console.log(text3.split(','))
+        console.log(text4.split(/[,-]/g))
+        console.log(text4.replace(',', '-').split('-'))
+
+        // 자주 사용되진 않지만, 이걸 몰라서 직접 구현하면 번거로운 메서드
+        // trim
+        let test = '                 hello world    '
+        console.log('                 hello world')
+        test.replaceAll(' ', '')
+        test.trim()
+
+        let str1 = '99'
+        console.log(str1.padStart(5, '0'));
+
+        let str2 = '99'
+        console.log(str1.padStart(5, '-'));
+    </script>
+</body>
+</html>

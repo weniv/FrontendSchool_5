@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        // 원시타입 string, number, bigint, boolean, undefined, symbol, null
+        let str1 = 'hello';
+        let str2 = str1;
+        console.log(str2); // 'hello'
+
+        str1 = 'world';
+        console.log(str2); // str2에 할당된 값은 여전히 'hello' 입니다.
+
+        // string
+        console.log(typeof 'hello')
+        console.log(typeof "hello")
+        // 이스케이프 문자
+        // \'	작은따옴표
+        // \"	큰따옴표
+        // \t	가로 탭
+        // \n	줄 바꿈
+        console.log(typeof 'i\'m so happy')
+        console.log('h\ne\nl\nl\no')
+
+        // number
+        console.log(typeof 10)
+        console.log(typeof 10.1)
+        console.log(typeof NaN)
+
+        // boolean
+        console.log(typeof true)
+        console.log(typeof false)
+
+        // undefined
+        console.log(typeof undefined)
+        let a;
+        console.log(a)
+
+        // null(값이 비어있음을 명시적으로 나타냄)
+        console.log(typeof null) // 설계 오류인 것을 개발자가 인정
+
+        // bigint(2^53 - 1보다 큰 정수)
+        console.log(90071992547409960n + 90071992547409960n)
+        console.log(90071992547409960 + 90071992547409960)
+        console.log(typeof 90071992547409960n)
+
+        // symbol
+        console.log(typeof Symbol())
+
+
+
+        /////////////////////////
+        // function
+        console.log(typeof function(){}) 
+
+        // object
+        console.log(typeof [10, 20, 30]) // 배열
+        console.log(typeof {a: 10, b: 20}) // object
+        console.log(typeof /정규표현식/gi)
+
+
+        // 형변환(다른 type -> number)
+        console.log(+'10')
+        console.log(Number('10')) // 권하지 않습니다.
+        console.log(parseInt('10')) // 권합니다.
+        console.log(parseFloat('10.1')) // 권합니다.
+        console.log(parseInt(true)) // NaN
+        console.log(parseInt(false)) // NaN
+        console.log(Number(true)) // 1
+        console.log(Number(false)) // 0
+
+        // 형변환(다른 type -> string)
+        let hojun = 10;
+        console.log(hojun.toString()) // 권합니다.
+        // 10.toString() 10.까지를 소숫점으로 봅니다.
+        console.log('' + 10)
+        console.log(String(10))
+
+        // 형변환(다른 type -> boolean)
+        let hojun2 = 10;
+        console.log(Boolean(-1))
+        console.log(Boolean(0))
+        console.log(Boolean(1000))
+        console.log(!!1000)
+        console.log(!!hojun2)
+    </script>
+</body>
+</html>

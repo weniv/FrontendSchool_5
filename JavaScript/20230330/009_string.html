@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        let txt = 'ABCDEFGHIJK'
+
+        console.log(txt + txt)
+        console.log(txt[0]) //Sass 1, 다른 프로그래밍 랭귀지는 0부터 시작합니다.
+        console.log(txt[2])
+        console.log(txt[-1]) // javascript에서 마이너스 인덱싱을 허락하지 않습니다.
+        console.log(txt.length)
+        console.log(txt.indexOf('E'))
+        console.log(txt.search('E'))
+
+        console.log(txt.indexOf('Z')) // 없는 값은 -1
+        console.log(txt.search('Z')) // 없는 값은 -1
+
+        // 나중에 추가로 배웁니다.
+        let regExp = /CD/;
+        console.log(txt.search(regExp));
+        console.log(txt.replace('ABC', 'hello'))
+
+        let txt2 = 'abcdeHelloabcde'
+        let regExp2 = /[A-Z]/g;
+        console.log(txt2.search(regExp2))
+
+        let txt3 = 'abcdeHelloabcde'
+        let regExp3 = /[A-Z]/g;
+        console.log(txt2.replace(regExp2, 'h'))
+
+        // JavaScript Markdown Parser
+        // https://codepen.io/kvendrik/pen/bGKeEE
+        //h
+        // let md = '# hello world'
+        // md = md.replace(/[\#]{6}(.+)/g, '<h6>$1</h6>');
+        // md = md.replace(/[\#]{5}(.+)/g, '<h5>$1</h5>');
+        // md = md.replace(/[\#]{4}(.+)/g, '<h4>$1</h4>');
+        // md = md.replace(/[\#]{3}(.+)/g, '<h3>$1</h3>');
+        // md = md.replace(/[\#]{2}(.+)/g, '<h2>$1</h2>');
+        // md = md.replace(/[\#]{1}(.+)/g, '<h1>$1</h1>');
+
+        let md = '# hello world'
+        md = md.replace(/[\#]{1} (.+)/g, '<h1>$1</h1>');
+
+        let md2 = '# hello world'
+        md = md2.replace('# ', '<h1>') + '</h1>'
+    </script>
+</body>
+</html>

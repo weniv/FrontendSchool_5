@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수</title>
+</head>
+<body>
+    <script>
+        // 변수(변할 수 있는 값) : var, let
+        // 상수(변하지 않는 값, 파이, DOM 요소) : const
+
+        // var는 키워드를 생략할 수 있으나(엄격모드 애러) 생략하시면 안되고, 모던자바스크립트에서는 var 키워드를 권하지 않습니다.
+
+        // let과 const는 블록-레벨 선언
+        // const 의 경우에는 반드시 초기화
+        // 여러분들에게 권해드리는 변수 선언은 const (값 변경 X, 가독성 높임)
+
+        const x = 100;
+        let y = 1000;
+
+        // 1000줄 코드
+
+        console.log(x, y);
+
+        // scope, 유효범위
+        if(true){
+            let x = 100;
+            console.log(x);
+        }
+        console.log(x);
+
+        if(true){
+            const x = 100;
+            console.log(x);
+        }
+        console.log(x);
+
+        let s = 0
+        for (let i = 0; i < 11; i++) {
+            s = s + i
+        }
+        console.log(s)
+
+        let ss = 0
+        for (let i = 0; i < 11; i++) {
+            ss = ss + i
+            const sss = ss / 10
+            console.log(sss)
+        }
+
+        // let ss = 0
+        // for (let i = 0; i < 11; i++) {
+        //     ss = ss + i
+        //     const sss = ss / 10
+        // }
+        // console.log(sss)
+
+        const k = 10;
+        k = 12; // error
+
+        const kk = [];
+        kk.push(10) // error가 안나는 이유는 가리키고 있는 화살표는 그대로이기 때문에
+    </script>
+</body>
+</html>
