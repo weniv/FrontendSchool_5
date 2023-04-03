@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        // 단락회로평가(***)
+        // true : 1
+        // false : 0
+        // and(&&) : 곱
+        // or(||) : 합
+        // not(!) : 부정
+
+        console.log(!"false") // false
+        console.log(!"0") // false
+
+        console.log(!false) // true
+        console.log(!0) // true
+
+        console.log('abc' / 2) // NaN
+
+        console.log(!!NaN)
+        console.log(!!undefined)
+        console.log(!!null)
+
+        let username = "";
+        username = username || "무명"
+        console.log(username)
+
+        let username2 = "이호준";
+        username2 = username2 || "무명"
+        console.log(username2)
+    </script>
+</body>
+</html>

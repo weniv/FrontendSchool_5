@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        // 할당연산
+        let x = 10;
+        x = x + 10;
+        x += 10;
+        
+        // 단항연산
+        console.log(-(2))
+        console.log(-(-2))
+        console.log(+(-2))
+        console.log(+(+2))
+        console.log(+(+'2'))
+
+        // 증감연산
+        let num = 3;
+        ++num // 선증가 후할당
+        --num
+        num++ // 선할당 후증가
+        num--
+
+        // 실무에서는 이것을 구분하는 것이 큰 의미가 없습니다.
+        for (let i = 0; i < 10; i++) {
+            console.log(i)
+        }
+
+        for (let i = 0; i < 10; ++i) {
+            console.log(i)
+        }
+
+        // 단락회로평가
+        // 3항 연산자
+        // 드모르간 법칙
+        // 햇갈리는 연산 모음
+    </script>
+</body>
+</html>
