@@ -125,8 +125,8 @@ body {
     height: 22px;
     margin-right: 8px;
     vertical-align: -5px;
-    background-image: url("images_login/icon_check_empty.png");
-
+    /* background-image: url("images_login/icon_check_empty.png"); */
+    background: url('images_login/css_sprites_retina.png') -10px -10px/ 84px 42px;
 }
 
 .form-login .inp-hold:focus-visible+.labl-hold::before {
@@ -135,8 +135,8 @@ body {
 }
 
 .form-login .inp-hold:checked+.labl-hold::before {
-    background-image: url("images_login/icon_check.png");
-
+    /* background-image: url("images_login/icon_check.png"); */
+    background: url('images_login/css_sprites_retina.png') -52px -10px/ 84px 42px;
 }
 
 .link-userinfo {
