@@ -29,8 +29,8 @@ console.log(height3 || 'hello')
 console.log(height3 ?? 'world')
 
 // 제가 지금 주석으로 다는 내용은 지금 여기서는 모르셔도 괜찮습니다.
-// || : 0, null, undefined
+// || : 0, null, undefined, false, NaN, '', etc...
 // ?? : null, undefined
 
-// falsy하다 : 0, null, undefined, "", NaN
+// falsy하다 : 0, null, undefined, false, NaN, '', etc...
 // nullish하다 : null, undefined
