@@ -99,5 +99,9 @@ for (const [i, j, ...k] of test1) {
     console.log(i, j, k);
 }
 
+function hello(a, b, ...c) {
+    console.log(a, b, c)
+}
 
+hello(1, 2, 3, 4, 5, 6, 7)
 
