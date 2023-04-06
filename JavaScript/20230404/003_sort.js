@@ -41,3 +41,44 @@ console.log(nums.sort((a, b) => {
     console.log(a, b)
     console.log(a - b)
 }));
+
+// 보충자료
+// 9 - 13 ==> 음수  ==> [9, 13, 10, 2]
+// 10 - 9 ==> 양수 ==> [9, 13, 10, 2]
+// 10 - 13 ==> 음수 ==> [9, 10, 13, 2]
+// 10 - 9 ==> 양수 ==> [9, 10, 13, 2]
+// 2 - 10 ==> 음수 ==> [9, 2, 10, 13]
+// 2 - 9 ==> 음수 ==> [2, 9, 10, 13]
+
+// if (true) {
+//     let num = 10;
+// }
+const arrNum2 = [13, 9, 10, 2];
+arrNum2.sort(function (a, b) {
+    // return a - b;
+    if (a < b) {
+        return -1;
+    } else if (b < a) {
+        return 1;
+    } else {
+        return 0;
+    }
+});
+
+const studentList3 = [
+    { id: 1, product: "연필", stock: 10 },
+    { id: 2, product: "노트", stock: 100 },
+    { id: 3, product: "지우게", stock: 5 },
+    { id: 4, product: "볼팬", stock: 30 },
+];
+studentList3.sort((a, b) => {
+    // if (a.stock < b.stock) {
+    //     return -1
+    // } else if (b.stock < a.stock) {
+    //     return 1
+    // } else {
+    //     return 0
+    // }
+
+    return a.stock - b.stock;
+});
