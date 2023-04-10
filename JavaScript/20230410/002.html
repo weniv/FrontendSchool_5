@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .blue {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="blue green red">hello</button>
+
+    <script>
+        const myBtn = document.querySelector("button");
+
+        myBtn.addEventListener('click', function () {
+            // console.log("hello world");
+            console.log(myBtn.classList.contains('red'));
+        })
+    </script>
+</body>
+
+</html>
