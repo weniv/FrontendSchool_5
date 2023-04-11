@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <figure>
+                <img src="" alt="잭필드">
+                <figcaption>
+                    상품 가격 : 39,990원 <span class="hidden">(주의) VIP만 받을 수 있는 혜택입니다.</span>
+                </figcaption>
+            </figure>
+        </li>
+    </ul>
+
+    <script>
+        const info = document.querySelector('figcaption');
+        console.log(info.innerHTML);
+        console.log(info.innerText);
+    </script>
+</body>
+
+</html>
