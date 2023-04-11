@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <strong class="sayHi">
+        반갑습니다.
+    </strong>
+    <script>
+        const sayHi = document.querySelector('.sayHi');
+        sayHi.insertAdjacentHTML('beforebegin', '<span>안녕하세요 저는</span>');
+        sayHi.insertAdjacentHTML('afterbegin', '<span>재현입니다</span>');
+        sayHi.insertAdjacentHTML('beforeend', '<span>면접오시면</span>');
+        sayHi.insertAdjacentHTML('afterend', '<span>치킨사드릴게요</span>');
+    </script>
+</body>
+
+</html>

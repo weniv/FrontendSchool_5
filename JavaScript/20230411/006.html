@@ -9,12 +9,27 @@
 </head>
 
 <body>
-    <img class="terran battle-cruiser" src="battle-cruiser.png" data-ship-id="324" data-weapons="laser"
-        data-health="400" data-mana="250" data-skill="yamato-cannon" />
+    <!-- <img class="terran battle-cruiser" src="battle-cruiser.png" data-ship-id="324" data-weapons="laser"
+        data-health="400" data-mana="250" data-skill="yamato-cannon" /> -->
+
+    <p></p>
+    <input type="text">
+    <button>Write Something!</button>
     <script>
-        const target = document.querySelector('img');
-        console.log(target.dataset);
-        console.log(target.dataset.shipId);
+        const myBtn = document.querySelector("button");
+        const myP = document.querySelector("p");
+        const myInput = document.querySelector("input");
+
+        // myBtn.addEventListener('click', function () {
+        //     myP.textContent = myInput.value;
+        // });
+
+        // input 요소에 'input' 이벤트를 연결하면 실시간으로 값이 반영되게 만들 수도 있습니다.
+        myInput.addEventListener('input', () => {
+            myP.textContent = myInput.value;
+        });
+
+        myP.innerHTML = "<strong>I'm Strong!!</strong>";
     </script>
 </body>
 

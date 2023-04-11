@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 문서 트리의 루트 요소(html)를 선택하는 가상 클래스 */
+        :root {
+            --main-bgColor: teal;
+            --main-txtColor: white;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            font-size: 1.5em;
+            background-color: var(--main-bgColor);
+        }
+
+        .wrapper {
+            padding: 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .picker {
+            display: inline-block;
+        }
+
+        .picker+.picker {
+            margin-left: 30px;
+        }
+
+        main {
+            color: var(--main-txtColor);
+        }
+    </style>
+</head>
+
+<body>
+    <section class="wrapper">
+        <article class="picker">
+            <label for="bg">배경색 : </label>
+            <input type="color" id="bg" class="inp-picker" data-id="bgColor">
+        </article>
+
+        <article class="picker">
+            <label for="txt">글씨색 : </label>
+            <input type="color" id="txt" class="inp-picker" data-id="txtColor">
+        </article>
+    </section>
+    <main>
+        <h1>Color Picker!!</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum possimus sint, voluptatem alias facere veniam
+            doloremque voluptas optio a omnis, ullam quae! Autem eveniet animi tempora pariatur dolorum ad laboriosam!
+        </p>
+    </main>
+
+    <script>
+        const inpPicker = document.querySelectorAll('.inp-picker');
+        const root = document.querySelector(':root');
+
+        inpPicker.forEach((item) => {
+            item.addEventListener('input', () => {
+                const name = `--main-${item.dataset.id}`;
+                root.style.setProperty(name, item.value);
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>
