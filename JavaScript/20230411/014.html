@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            color: #fff;
+        }
+
+        #mainForm {
+            width: 460px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #FF8787;
+        }
+
+        #mainForm fieldset {
+            border: none;
+        }
+
+        /* 
+    redered legend : https://html.spec.whatwg.org/multipage/rendering.html#rendered-legend 
+    legend는 fieldset의 패딩을 무시합니다.
+*/
+        #mainForm legend {
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        #mainForm label {
+            display: block;
+        }
+
+        #mainForm input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            /* 그림자의 수평거리, 수직거리, 그림자 테두리 크기, 그림자의 위치(inset: 내부로)  */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+        }
+
+        /* 가상클래스 valid. input에 입력받은 값이 유효하다면을 의미합니다. */
+        #mainForm input:valid {
+            background-color: #E5EBB2;
+        }
+
+        #mainForm button {
+            /* fieldset은 BFC를 생성하기 때문에 해제가 필요 없습니다. https://html.spec.whatwg.org/multipage/rendering.html#the-fieldset-and-legend-elements */
+            float: right;
+            padding: 10px;
+            margin-left: 10px;
+            background-color: #F8C4B4;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+        }
+
+        #mainForm progress {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="mainForm">
+        <fieldset>
+            <legend>JS 스터디 모집 설문조사</legend>
+            <!-- progress : 작업의 완료 정도를 나타내는 요소입니다. -->
+            <progress max="100" value="0" class="bar-progress"></progress>
+            <p class="msg-notice">설문지를 작성하세요!</p>
+
+            <label for="q1">질문 1. 무엇을 가장 배우고 싶으세요?</label>
+            <input type="text" id="q1" required>
+            <label for="q2">질문 2. 시간은 언제가 적당한가요?</label>
+            <input type="text" id="q2" required>
+            <label for="q3">질문 3. 몇 시간정도 예상하세요?</label>
+            <input type="text" id="q3" required>
+            <label for="q4">질문 4. 난이도를 조정한다면?</label>
+            <input type="text" id="q4" required>
+            <label for="q5">질문 5. 끝으로 하고싶은 말이 있나요?</label>
+            <input type="text" id="q5" required>
+
+            <button type="submit">제출</button>
+            <button type="reset">초기화</button>
+        </fieldset>
+    </form>
+
+    <script>
+        const mainForm = document.getElementById('mainForm');
+        const progress = document.querySelector('.bar-progress');
+        const msgNotice = document.querySelector('.msg-notice');
+
+        mainForm.addEventListener('input', function (event) {
+            const inputs = mainForm.querySelectorAll('input');
+            const validInputs = mainForm.querySelectorAll('input:valid');
+
+            progress.value = validInputs.length / inputs.length * 100;
+            if (progress.value === 20) {
+                msgNotice.textContent = '설문지 작성이 시작되었어요~ 끝까지 작성해주세요!';
+            } else if (progress.value === 40) {
+                msgNotice.textContent = '좋아요~ 계속 고고씽~!';
+            } else if (progress.value === 60) {
+                msgNotice.textContent = '절반 지났습니다! 화이팅!';
+            } else if (progress.value === 80) {
+                msgNotice.textContent = '거의 다 했어요! 조금만 더 ~~';
+            } else if (progress.value === 100) {
+                msgNotice.textContent = '잘했습니다! 제출해주세요~';
+            } else {
+                msgNotice.textContent = '설문지를 작성하세요!';
+            }
+        })
+
+        mainForm.addEventListener('click', function (event) {
+            const target = event.target;
+            if (target.tagName !== 'BUTTON') return;
+
+            if (target.type === 'submit') {
+                const inputs = mainForm.querySelectorAll('input');
+                const validInputs = mainForm.querySelectorAll('input:valid');
+
+                if (validInputs.length === inputs.length) {
+                    alert('제출되었습니다.');
+                } else {
+                    alert('입력이 완료되지 않았습니다.');
+                }
+            } else if (target.type === 'reset') {
+                progress.value = 0;
+                msgNotice.textContent = '설문지를 작성하세요!';
+            }
+        })
+    </script>
+</body>
+
+</html>

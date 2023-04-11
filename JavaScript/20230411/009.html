@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 주석입니다 주석. -->
+    <article class="cont">
+        <h1>안녕하세요 저는 이런 사람입니다.</h1>
+        <p>지금부터 자기소개 올리겠습니다</p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt incidunt voluptates laudantium fugit, omnis
+        dolore itaque esse exercitationem quam culpa praesentium, quisquam repudiandae aut. Molestias qui quas ea iure
+        officiis.
+        <strong>감사합니다!</strong>
+    </article><script>
+        const cont = document.querySelector(".cont");
+        console.log(cont.firstChild);  // 첫번째 자식을 찾습니다.
+        console.log(cont.lastChild);   // 마지막 자식을 찾습니다.
+        console.log(cont.nextSibling); // 다음 형제요소를 찾습니다.
+        console.log(cont.previousSibling);    // 이전 형제노드를 찾습니다.
+        console.log(cont.children);           // 모든 직계자식을 찾습니다.
+        console.log(cont.parentElement);      // 부모 요소를 찾습니다.
+        // 자기 자신부터 시작해 부모로 타고 올라가며 가장 가까운 cont 클래스 요소를 찾습니다. 단, 형제요소는 찾지 않습니다.
+        console.log(cont.querySelector('strong').closest('strong').innerHTML);  
+    </script>
+</body>
+
+</html>
