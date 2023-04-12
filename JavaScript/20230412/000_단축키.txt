@@ -1,0 +1,6 @@
+console에 내어쓰기
+Shift + Tab
+
+VSC에 내어쓰기
+Shift + Tab
+Ctrl + [
