@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <script>
+            const canvas = document.getElementById("canvas")
+            canvas.width = 1000
+            canvas.height = 1000
+            const ctx = canvas.getContext("2d")
+            let x = 100
+            let y = 100
+            let toggle = true
+            
+            // requestAnimationFrame
+            // 그리기 최적화 되었을 때 그려줌(반복문이면 엄청 빠르게 실행)
+            // 1/60 목표(보장은 아님, 기기의 성능에 따라 바뀜)
+            function draw(){
+                ctx.clearRect(0, 0, canvas.width, canvas.height)
+                ctx.beginPath() // 시작하면 이전에 그렸던 것이 닫힘, 그릴때마다 해주길 권고, 여러군데서 호출할 경우 엉킴
+                ctx.arc(x, y, 20, 0, Math.PI*2, false)
+                ctx.fill()
+                x += 1
+                if (x >= 200){
+                    toggle = false
+                }
+                if (toggle) {
+                    y += 1
+                } else {
+                    y -= 1
+                }
+                // draw()
+                requestAnimationFrame(draw)
+            }
+
+            draw()
+        </script>
+    </body>
+</html>

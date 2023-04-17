@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>D3</title>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <style>
+            svg {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="canvas"></div>
+        <script>
+            const sampleData = [100, 30, 50, 70, 50, 20, 200, 100];
+            const 종목 = [
+                "농구",
+                "축구",
+                "야구",
+                "피구",
+                "구구",
+                "구콘",
+                "족구",
+                "당구",
+            ];
+
+            const canvas = d3.select(".canvas");
+            const svg = canvas
+                .append("svg")
+                .attr("width", 1000)
+                .attr("height", 1000);
+
+            sampleData.forEach((data, index) => {
+                svg.append("rect")
+                    .attr("x", 50 + index * 40)
+                    .attr("y", 300 - data)
+                    .attr("width", 30)
+                    .attr("height", data)
+                    .attr("fill", "hotpink");
+
+                // 텍스트 넣는 코드
+                svg.append("text")
+                    .attr("x", 50 + index * 40)
+                    .attr("y", 320)
+                    .text(종목[index]);
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>D3</title>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+            :root {
+                --main-font: "Pacifico", cursive;
+            }
+
+            text {
+                font-family: var(--main-font);
+            }
+
+            svg {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <svg width="500px" height="500px">
+            <g>
+                <circle cy="100" cx="100" r="30"></circle>
+                <circle cy="10" cx="10" r="30"></circle>
+                <rect x="200" y="50" width="50" height="50"></rect>
+                <rect
+                    x="200"
+                    y="50"
+                    width="50"
+                    height="50"
+                    style="fill: red; stroke: black"
+                ></rect>
+                <path
+                    d="M 100,300 100,350 200,300, 200,350"
+                    style="fill: black"
+                ></path>
+                <path
+                    d="M 300,300 300,350 400,350 400,300"
+                    style="fill: black"
+                ></path>
+            </g>
+            <text x="150" y="150">hello world</text>
+        </svg>
+        <div class="canvas"></div>
+        <script>
+            const canvas = d3.select(".canvas");
+            const svg = canvas
+                .append("svg")
+                .attr("width", 1000)
+                .attr("height", 1000);
+
+            // svg.append("circle").attr("cx", 100).attr("cy", 100).attr("r", 30);
+
+            // 16진수(#ffffff) 됩니다. -> 연산을 통해 color 값에 변동을 줄 수 있습니다.
+            const color = ["red", "green", "blue", "pink", "black"];
+
+            for (let i = 1; i < 6; i++) {
+                svg.append("circle")
+                    .attr("cx", 100 * i)
+                    .attr("cy", 100 * i)
+                    .attr("r", (30 * i) / 2)
+                    .attr("fill", color[i - 1]);
+            }
+
+            // svg.append("circle")
+            //     .attr("cx", 100)
+            //     .attr("cy", 100)
+            //     .attr("r", 30)
+            //     .attr("fill", "#999999");
+
+            svg.append("rect")
+                .attr("x", 200)
+                .attr("y", 85)
+                .attr("width", 30)
+                .attr("height", 30)
+                .attr("fill", "hotpink");
+
+            svg.append("text")
+                .attr("x", 250)
+                .attr("y", 105)
+                .text("hello D3 world")
+                .style("font-size", "32px")
+                .style("font-weight", "bold")
+                .style("font-family", "Pacifico");
+
+            svg.append("line")
+                .attr("x1", 200)
+                .attr("y1", 200)
+                .attr("x2", 300)
+                .attr("y2", 300)
+                .attr("stroke", "red");
+
+            svg.append("line")
+                .attr("x1", 300)
+                .attr("y1", 300)
+                .attr("x2", 400)
+                .attr("y2", 400)
+                .attr("stroke", "black");
+        </script>
+    </body>
+</html>

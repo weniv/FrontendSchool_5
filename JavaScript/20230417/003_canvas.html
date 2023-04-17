@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <!-- https://developer.mozilla.org/ko/docs/Web/API/Canvas_API -->
+    <!-- 
+        1. 우리가 실습할 것은 2D, 물론 3D도 할 수 있습니다.
+        2. 캔버스가 일반적으로 하드웨어 가속을 하기 때문에 성능이 더 좋긴합니다.(그러나 어려움)
+        3. 캔버스는 비트맵, SVG는 벡터
+        4. 구형브라우저는 캔버스 지원 안할 수 있습니다.
+            if (canvas.getContext) {
+                console.log('캔버스 지원하는지 판단')
+            }
+    -->
+    <canvas id="canvas"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas')
+        canvas.width = 1000 // 기본사이즈(300) - CSS로 수정하면 이 비율에서 압축으로 갑니다.(예를 들어 css가 500으로 할당이 되었다면 2배 압축되어 들어갑니다. 고해상도 지원할 때 많이 사용합니다.)
+        canvas.height = 1000 // 기본사이즈(150) - CSS로 수정하면 이 비율에서 압축으로 갑니다.
+
+        const ctx = canvas.getContext('2d')
+        // ctx.fillStyle = 'green' // css color와 같습니다.
+        // ctx.fillRect(10, 10, 100, 200) // x, y, width, height
+
+        // ctx.fillStyle = 'red' 
+        // ctx.fillRect(300, 300, 100, 100)
+
+        function 사각형(ctx, color, width, height){
+            ctx.fillStyle = color
+            ctx.fillRect(100, 100, width, height)
+        }
+
+        function 삼각형(ctx){
+            ctx.beginPath();
+            ctx.moveTo(75, 50);
+            ctx.lineTo(100, 75);
+            ctx.lineTo(100, 25);
+            ctx.fillStyle = "red";
+            ctx.fill();
+        }
+
+        function 원(ctx){
+            // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arc
+            // https://squll1.tistory.com/entry/canvas-arc-%EC%9B%90%ED%98%B8-%EA%B7%B8%EB%A6%AC%EA%B8%B0
+            // arc(x, y, radius, startAngle, endAngle, counterclockwise)
+            ctx.beginPath()
+            ctx.arc(50, 120, 10, 0, Math.PI*2, false);
+            ctx.fill();
+        }
+
+        사각형(ctx, 'blue', 50, 100)
+        삼각형(ctx)
+        원(ctx)
+
+    </script>
+</body>
+</html>
