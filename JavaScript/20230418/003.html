@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <button type="submit" class="submit">제출</button>
+    </form>
+
+    <script>
+        confirm("선택해주세요");
+        const submit = document.querySelector('.submit');
+        submit.addEventListener('click', (event) => {
+            console.log('clicked');
+            event.preventDefault();
+            event.stopPropagation();
+        });
+
+        document.body.addEventListener('click', () => {
+            console.log('event still alive!');
+        });
+    </script>
+
+    <!-- <a href="https://www.naver.com" class="link">네이버 링크입니다만..</a>
+    <script>
+        const link = document.querySelector('.link');
+        link.addEventListener('click', (event) => {
+            console.log('clicked');
+            event.preventDefault();
+        })
+    </script> -->
+
+    <!-- <form action="">
+        <button type="submit" class="submit">제출</button>
+    </form>
+    <script>
+        // const submit = document.querySelector('.submit');
+        // submit.addEventListener('click', (event) => {
+        //     console.log('clicked');
+        //     event.preventDefault();
+        // })
+
+        document.addEventListener('contextmenu', (event) => {
+            console.log('오른쪽 클릭!');
+            event.preventDefault();
+            alert('오른쪽 클릭을 지원하지 않습니다!');
+        });
+    </script> -->
+
+</body>
+
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            font-size: 10px;
+        }
+
+        ul,
+        li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+        }
+
+        .custom-select {
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+
+        /* 셀렉트 박스 */
+        .btn-select {
+            width: 20rem;
+            height: 4rem;
+            border-radius: 1rem;
+            border: 1px solid #c4c4c4;
+            background: #fff;
+            text-align: left;
+            padding: 0 1em;
+            position: relative;
+        }
+
+        .btn-select.on,
+        .btn-select:focus {
+            outline: none;
+            border-color: #fdd65f;
+            box-shadow: 0 0 0 3px #fff9e7;
+        }
+
+        /* 화살표 모양 */
+        .btn-select::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 1em;
+            margin-top: -0.5rem;
+            box-sizing: border-box;
+            border-top: 0.8rem solid #c4c4c4;
+            border-left: 0.5rem solid transparent;
+            border-right: 0.5rem solid transparent;
+            transition: transform 0.3s;
+        }
+
+        /* 활성화 시 화살표 회전 */
+        .btn-select.on::after {
+            transform: rotate(-180deg);
+        }
+
+        /* 리스트 */
+        .list {
+            position: absolute;
+            top: 4.8rem;
+            left: 0;
+            z-index: 1;
+            width: 20rem;
+            border: 1px solid #c4c4c4;
+            border-radius: 1rem;
+            background: #fff;
+            box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+
+            /* 변동값 */
+            display: none;
+        }
+
+        .btn-select.on+.list {
+            display: block;
+        }
+
+        .list li {
+            padding: 0.5rem 0.8rem;
+        }
+
+        .list button {
+            width: 100%;
+            height: 100%;
+            text-align: left;
+            border-radius: 0.8rem;
+            height: 4rem;
+            background: #fff;
+            transition: background-color 0.3s;
+        }
+
+        .list li button:hover,
+        .list li button:focus {
+            background-color: #fff3cf;
+        }
+
+        .list li button:focus {
+            outline: 2px solid #fdd65f;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>셀렉트 박스 만들기</h3>
+    <div class="custom-select">
+        <button class="btn-select">최애 프로그래밍 언어</button>
+        <ul class="list">
+            <li><button type="button">Python</button></li>
+            <li><button type="button">Java</button></li>
+            <li><button type="button">JavaScript</button></li>
+            <li><button type="button">C#</button></li>
+            <li><button type="button">C/C++</button></li>
+        </ul>
+    </div>
+
+    <script>
+        // 셀렉트
+        const select = document.querySelector(".custom-select");
+        const btn = select.querySelector(".btn-select"); //select
+        const list = select.querySelector(".list"); //option
+        const optionList = list.querySelectorAll("button"); // option list
+        const firstOption = list.querySelector("button"); //option first button
+        const lastOption = optionList[optionList.length - 1]; //option last button
+
+        // 현재 선택된 아이템이 무엇인지 저장하는 공간
+        let selectOption = firstOption;
+
+        // select option 열기
+        const handleOpen = function () {
+            btn.classList.toggle("on");
+            // 선택된 option으로 포커스 이동
+            selectOption.focus();
+        };
+
+        // 다음 option으로 이동
+        const nextOption = function (e) {
+            e.preventDefault();
+            const next = e.target.closest("li").nextElementSibling;
+            if (next) {
+                next.querySelector("button").focus();
+            } else {
+                firstOption.focus();
+            }
+        };
+
+        // 이전 option으로 이동
+        const prevOption = function (e) {
+            e.preventDefault();
+            const prev = e.target.closest("li").previousElementSibling;
+            if (prev) {
+                prev.querySelector("button").focus();
+            } else {
+                lastOption.focus();
+            }
+        };
+
+        // 아래방향키 tab, 위쪽 방향키 shift + tab
+        const moveOption = function (e) {
+            // 아래쪽 방향키(↓)	40 / tab
+            if (e.keyCode === 40 || (!e.shiftKey && e.keyCode === 9)) {
+                nextOption(e);
+            }
+            // 위쪽 방향키(↑)	38 / shift + tab
+            if (e.keyCode === 38 || (e.shiftKey && e.keyCode === 9)) {
+                prevOption(e);
+            }
+        };
+
+        // option 선택
+        const handleSelect = function (e) {
+            if (e.target.nodeName === "BUTTON") {
+                btn.innerText = e.target.innerText;
+                btn.classList.remove("on");
+                window.setTimeout(function () {
+                    btn.focus();
+                }, 100);
+                selectOption = e.target;
+            }
+        };
+
+        // select 닫기
+        const handleClose = function () {
+            btn.classList.remove("on");
+            window.setTimeout(function () {
+                btn.focus();
+            }, 100);
+        };
+
+        // option 열기 : 클릭하거나, 스페이스, 엔터, 위아래 화살표 방향 누를 때
+        // button의 경우 클릭(스페이스, 엔터 지원)
+        btn.addEventListener("click", handleOpen);
+        btn.addEventListener("keydown", function (e) {
+            if (e.keyCode === 40 || e.keyCode === 38) {
+                handleOpen();
+            }
+        });
+
+        // option 닫기 : list에서 ESC(27) 누를 때, 영역 밖 클릭 시
+        list.addEventListener("keydown", function (e) {
+            if (e.keyCode === 27) {
+                handleClose();
+            }
+        });
+        document.addEventListener("click", function (e) {
+            if (!e.target.closest(".custom-select")) {
+                btn.classList.remove("on");
+            }
+        });
+
+        // option 선택하기
+        optionList.forEach((element) =>
+            element.addEventListener("click", function (e) {
+                handleSelect(e);
+            })
+        );
+
+        // option 키보드로 제어하기
+        optionList.forEach((element) =>
+            element.addEventListener("keydown", function (e) {
+                moveOption(e);
+            })
+        );
+
+    </script>
+</body>
+
+</html>
