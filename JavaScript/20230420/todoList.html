@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <button></button>
     <script>
         // 1. 할것 객체
         class Todo {
@@ -36,11 +37,33 @@
                 return this.todoList;
             }
 
-            getLeftTodoCount() {
 
+            getLeftTodoCount() {
+                return this.todoList.reduce((a, b) => {
+                    console.log(a + !b.finished);
+                    return a + !b.finished
+                }, 0);
             }
 
+
+            // getLeftTodoCount() {
+            //     // return this.todoList.reduce((total, current) => current.finishied === false ? ++total : total, 0);
+
+            //     return this.todoList.filter((item) => item.finishied === false).length;
+            // }
+
+            // if (current.finishied === false) {
+            //     return ++total;
+            // } else {
+            //     return total;
+            // }
+
         }
+
+        const manager = new TodoManager();
+        manager.addItem('haha');
+        manager.addItem('haha');
+        manager.addItem('haha');
     </script>
 </body>
 

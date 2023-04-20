@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            border: 1px solid black;
+            /* transition: .2s; */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        const target = document.querySelector('div');
+        let pos = 0;
+        // 사용자가 어떤 키를 눌렀는지 정보를 저장하는 객체
+        let keys = {};
+
+        // 사용자가 키를 눌렀을때 실행
+        function move(event) {
+            keys[event.key] = true;
+            console.log(keys);
+        }
+
+        // 사용자가 키에서 손을 땔 때 실행
+        function stop(event) {
+            keys[event.key] = false;
+            console.log(keys);
+        }
+
+        document.addEventListener('keydown', move);
+        document.addEventListener('keyup', stop);
+
+        // function move(event) {
+        //     const keyName = event.key;
+        //     console.log(keyName);
+
+        //     if (keyName === 'ArrowRight') {
+        //         pos += 5;
+        //         target.style.transform = `translateX(${pos}px)`;
+        //     } else if (keyName === 'ArrowLeft') {
+        //         pos -= 5;
+        //         target.style.transform = `translateX(${pos}px)`;
+        //     }
+        // }
+
+        function play() {
+            if (keys.ArrowRight) {
+                pos += 5;
+                target.style.transform = `translateX(${pos}px)`;
+            }
+
+            if (keys.ArrowLeft) {
+                pos -= 5;
+                target.style.transform = `translateX(${pos}px)`;
+            }
+
+            requestAnimationFrame(play);
+        }
+
+        play();
+    </script>
+</body>
+
+</html>
