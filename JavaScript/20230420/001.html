@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Sausage {
+            constructor(el1, el2) {
+                this.inside1 = el1;
+                this.inside2 = el2;
+            }
+
+            taste() {
+                console.log(`와~~${this.inside1}맛과 ${this.inside2}맛이 나는 소세지다!!`);
+            }
+        }
+
+        class FireSausage extends Sausage {
+            constructor(el1, el2, el3) {
+                // this.inside1 = el1;
+                // this.inside2 = el2;
+                super(el1, el2);
+                this.inside3 = el3;
+            }
+
+            // 오버로딩
+            // taste(el1) {
+            //     console.log(`와~~${this.inside1}맛과 ${this.inside2}맛과 ${this.inside3}맛이 나는 소세지다!!`);
+            // }
+
+            // taste(el1, el2) {
+            //     console.log(`와~~${this.inside1}맛과 ${this.inside2}맛과 ${this.inside3}맛이 나는 소세지다!!`);
+            // }
+
+            taste(el1) {
+                if (el1) {
+                    console.log(`와~~${this.inside1}맛과 ${this.inside2}맛과 ${this.inside3}맛이 나는 소세지다!!`);
+                } else {
+
+                }
+
+            }
+
+            // 오버라이딩
+            // taste() {
+            //     console.log(`와~~${this.inside1}맛과 ${this.inside2}맛과 ${this.inside3}맛이 나는 소세지다!!`);
+            // }
+        }
+
+        const fireSausage = new FireSausage('파맛', '불맛', '키위맛');
+    </script>
+</body>
+
+</html>
