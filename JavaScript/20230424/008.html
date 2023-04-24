@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>hello lions!!</p>
+    <button type="button">통신버튼</button>
+    <script>
+        const btn = document.querySelector('button');
+        // btn.addEventListener('click', xhrRequest);
+        let result;
+
+        function xhrRequest() {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'message.txt');
+            xhr.onreadystatechange = () => {
+
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    result = xhr.responseText;
+                    console.log(result);
+                    document.querySelector('p').textContent = result;
+
+                }
+            }
+            xhr.send();
+        }
+
+        xhrRequest();
+
+        console.log(result);
+    </script>
+</body>
+
+</html>
