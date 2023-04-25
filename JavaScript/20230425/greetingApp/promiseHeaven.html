@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        class UserStorage {
+
+            // 유저가 등록되었는지 확인
+            searchUser(userName, password) {
+
+                return new Promise((resolve, reject) => {
+
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('GET', 'users.json');
+                    xhr.onreadystatechange = () => {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+
+                            const result = JSON.parse(xhr.responseText).user.find((item) => {
+                                return item.userName === userName && item.password === password
+                            });
+
+                            if (result) {
+                                resolve(userName);
+                                // onSuccess(userName);
+                            } else {
+                                reject('user not found');
+                                // onError(new Error('user not found'));
+                            }
+                        }
+                    }
+
+                    xhr.send();
+                })
+            }
+
+            // 등록된 유저에 따른 인사말을 출력
+            sayHi(user) {
+
+                return new Promise((resolve, reject) => {
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('GET', 'greetings.json');
+                    xhr.onreadystatechange = () => {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+                            console.log(xhr.responseText);
+                            const result = JSON.parse(xhr.responseText).greetings.find((item) => {
+                                return item.userName === user
+                            });
+
+                            if (result) {
+                                resolve(
+                                    {
+                                        name: result.userName,
+                                        greetings: result.greetings
+                                    }
+                                );
+                            } else {
+                                reject('no greetings');
+                            }
+                        }
+                    }
+
+                    xhr.send();
+                })
+            }
+        }
+
+        const userStorage = new UserStorage();
+
+        const userName = prompt('이름을 입력하세요');
+        const password = prompt('비밀번호를 입력하세요');
+
+        userStorage.searchUser(userName, password)
+            .then((result) => {
+                return userStorage.sayHi(result)
+            }).then((result) => {
+                alert(`당신에게 인사합니다! ${result.name}님 ${result.greetings}`);
+            }).catch((errorMsg) => {
+                console.log(new Error(errorMsg));
+            });
+
+        // userStorage.searchUser(
+        //     userName,
+        //     password,
+        //     (name) => {
+        //         userStorage.sayHi(
+        //             name,
+        //             (result) => {
+        //                 alert(`당신에게 인사합니다! ${ result.name }님 ${ result.greetings }`);
+        //             },
+        //             (error) => {
+        //                 console.log(error);
+        //             }
+        //         )
+        //     },
+        //     (error) => {
+        //         console.log(error);
+        //     }
+        // );
+
+
+
+    </script>
+</body>
+
+</html>
