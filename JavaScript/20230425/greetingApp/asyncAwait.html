@@ -16,31 +16,36 @@
 
             // 유저가 등록되었는지 확인
             async searchUser(userName, password) {
+                try {
+                    // await : 프로미스 객체가 반환될때 까지 다음 코드의 동작을 중지하고, 프라미스 객체의 fulfilled 값을 반환합니다.
+                    // return await new Promise((resolve) => {
+                    const response = await fetch('users.json');
 
-                // await : 프로미스 객체가 반환될때 까지 다음 코드의 동작을 중지하고, 프라미스 객체의 fulfilled 값을 반환합니다.
-                // return await new Promise((resolve) => {
-                const response = await fetch('users.json');
+                    const data = await response.json();
 
-                const data = await response.json();
+                    //     .then((data) => {
+                    //     if (data.ok) {
+                    //         return data.json()
+                    //     } else {
+                    //         console.log(new Error('네트워크 응답에 문제가 발생했습니다.'));
+                    //     }
+                    // })
+                    // .then((response) => {
+                    const result = data.user.find((item) => {
+                        return item.userName === userName && item.password === password
+                    });
 
-                //     .then((data) => {
-                //     if (data.ok) {
-                //         return data.json()
-                //     } else {
-                //         console.log(new Error('네트워크 응답에 문제가 발생했습니다.'));
-                //     }
-                // })
-                // .then((response) => {
-                const result = data.user.find((item) => {
-                    return item.userName === userName && item.password === password
-                });
-
-                if (result) {
-                    // await 로 인해 userName이 반환됩니다.
-                    // resolve(userName);
-                    return userName;
-                } else {
-                    console.log(new Error('user not found'));
+                    if (result) {
+                        // await 로 인해 userName이 반환됩니다.
+                        // resolve(userName);
+                        return userName;
+                    } else {
+                        // console.log(new Error('user not found'));
+                        throw 'user not found';
+                    }
+                } catch (error) {
+                    console.log(new Error(error));
+                    throw error; // 발생한 에러를 다시 던져준다
                 }
                 // })
                 // })
@@ -48,33 +53,39 @@
 
             // 등록된 유저에 따른 인사말을 출력
             async sayHi(user) {
+                try {
 
-                // return await new Promise((resolve) => {
+                    // return await new Promise((resolve) => {
 
-                const response = await fetch('greetings.json');
+                    const response = await fetch('greetings.json');
 
-                const data = await response.json();
+                    const data = await response.json();
 
-                // .then((data) => {
-                //     if (data.ok) {
-                //         return data.json()
-                //     } else {
-                //         console.log(new Error('네트워크 응답에 문제가 발생했습니다.'));
-                //     }
-                // }).then((response) => {
-                const result = data.greetings.find((item) => {
-                    return item.userName === user
-                });
+                    // .then((data) => {
+                    //     if (data.ok) {
+                    //         return data.json()
+                    //     } else {
+                    //         console.log(new Error('네트워크 응답에 문제가 발생했습니다.'));
+                    //     }
+                    // }).then((response) => {
+                    const result = data.greetings.find((item) => {
+                        return item.userName === user
+                    });
 
-                if (result) {
-                    // resolve(
-                    return {
-                        name: result.userName,
-                        greetings: result.greetings
+                    if (result) {
+                        // resolve(
+                        return {
+                            name: result.userName,
+                            greetings: result.greetings
+                        }
+                        // );
+                    } else {
+                        // console.log(new Error('no greetings'));
+                        throw 'no greetings'
                     }
-                    // );
-                } else {
-                    console.log(new Error('no greetings'));
+                } catch (error) {
+                    console.log(new Error(error));
+                    throw error; // 발생한 에러를 다시 던져준다
                 }
                 // })
                 // })

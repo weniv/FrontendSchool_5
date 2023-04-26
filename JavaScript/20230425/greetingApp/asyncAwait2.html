@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        class UserStorage {
+            // 유저를 검색
+            async searchUser(userName, password) {
+
+                // 프로미스 객체를 반환하도록 생성자로 감싸도록 하겠습니다.
+                return await new Promise((resolve, reject) => {
+                    fetch('user.json')
+                        .then((data) => {
+                            if (data.ok) {
+                                return data.json()
+                            } else {
+                                console.log(new Error('네트워크 응답이 올바르지 않습니다.'));
+                            }
+                        })
+                        .then((response) => {
+                            const result = response.user.find(item => {
+                                return item.userName === userName && item.password === password
+                            });
+
+                            if (result) {
+                                // 콜백 함수를 실행하지 않고 resolve 와 reject를 실행하도록 합니다.
+                                resolve(userName);
+
+                            } else {
+                                // reject('user not found');
+                                throw 'user not found'
+                            }
+                            // 프라미스의 fulfilled 값을 반환하기 때문에 return 값을 제거합니다.
+                            // return response;
+                        })
+                        .catch((data) => {
+                            console.log(new Error(data));
+                        });
+                })
+
+            }
+
+            // 유저에 맞는 인사말을 출력
+            async sayHi(user) {
+                return await new Promise((resolve, reject) => {
+
+                    fetch('greetings.json')
+                        .then((data) => {
+                            return data.json()
+                        }).then((response) => {
+                            const result = response.greetings.find(item => {
+                                return item.userName === user
+                            });
+
+                            if (result) {
+                                resolve({
+                                    name: result.userName,
+                                    greetings: result.greetings
+                                });
+                            } else {
+                                throw 'no greetings'
+                                // reject('no greetings');
+                            }
+                        })
+                        .catch((response) => {
+                            console.log(new Error(response));
+                        });
+
+                });
+            }
+        }
+
+        // 인스턴스를 만들고
+        const userStorage = new UserStorage();
+
+        // 사용자 입력을 받습니다.
+        const userName = prompt('이름를 입력하세요');
+        const password = prompt('등록한 비밀번호를 입력하세요');
+
+        (async function () {
+            const user = await userStorage.searchUser(userName, password);
+            const result = await userStorage.sayHi(user); // 사용자 인사말 출력 메소드 호출
+            alert(`당신에게 인사합니다. ${result.name}님 ${result.greetings}`); // 최종 결과 출력
+        })()
+
+
+        // const result = userStorage.searchUser(userName, password);
+
+            // searchUser의 resolve 함수가 실행되었다면
+            // .then((result) => { return userStorage.sayHi(result) })
+            // // sayHi resolve 함수가 실행되었다면
+            // .then((result) => {
+            //     alert(`당신에게 인사합니다. ${result.name}님 ${result.greetings}`);
+            //     // reject 가 실행되었다면
+            // }).catch((errorMsg) => {
+            //     console.log(new Error(errorMsg));
+            // });
+
+    </script>
+</body>
+
+</html>
