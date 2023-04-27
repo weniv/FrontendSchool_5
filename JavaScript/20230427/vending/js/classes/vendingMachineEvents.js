@@ -53,8 +53,22 @@ class VendingMachineEvents {
 
 
         /**
-         * 2. 거스름돈 빈환 버튼
+         * 2. 거스름돈 반환 버튼
+         * 1) 반환버튼을 누르면 소지금 === 잔액 + 소지금
+         * 2) 반환버튼을 누르면 잔액창이 초기화됩니다.
          */
+        this.btnReturn.addEventListener('click', () => {
+            // 잔액
+            const balanceVal = parseInt(this.balance.textContent.replaceAll(',', ''));
+
+            // 소지금 
+            const myMoneyVal = parseInt(this.myMoney.textContent.replaceAll(',', ''));
+
+            if (balanceVal) {
+                this.myMoney.textContent = new Intl.NumberFormat().format(balanceVal + myMoneyVal) + '원';
+                this.balance.textContent = null;
+            }
+        });
     }
 }
 
