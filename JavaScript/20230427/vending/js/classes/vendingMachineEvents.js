@@ -17,6 +17,21 @@ class VendingMachineEvents {
         this.txtTotal = getInfo.querySelector('.total-price');
     }
 
+    //장바구니 콜라 생성 함수
+    stagedItemGenerator(target) {
+        const stagedItem = document.createElement('li');
+
+        stagedItem.innerHTML = `
+        <img src="./img/${target.dataset.img}" alt="">
+            ${target.dataset.item}
+        <strong>1
+            <span class="a11y-hidden">개</span>
+        </strong>
+        `;
+        this.stagedList.append(stagedItem);
+    }
+
+
     bindEvent() {
         /**
          * 1. 입금 버튼 기능
@@ -69,6 +84,35 @@ class VendingMachineEvents {
                 this.balance.textContent = null;
             }
         });
+
+        /**
+         * 3. 자판기 장바구니 채우기
+         * 1) 아이템을 누르면 잔액 === 잔액 - 아이템 가격
+         * 2) 아이템 가격이 잔액보다 크다면 경고메세지를 줍니다.
+         * 3) 아이템이 장바구니에 들어갑니다.
+         * 4) 아이템의 count가 -1이 됩니다. 아이템의 카운트가 0이되면 품절 표시를 합니다.
+         */
+        this.btnsCola = document.querySelectorAll('.section1 .btn-cola');
+
+        this.btnsCola.forEach((item) => {
+            item.addEventListener('click', (event) => {
+                const balanceVal = parseInt(this.balance.textContent.replaceAll(',', ''));
+                const targetElPrice = parseInt(event.currentTarget.dataset.price);
+
+                if (balanceVal >= targetElPrice) {
+                    this.balance.textContent = new Intl.NumberFormat().format(balanceVal - targetElPrice) + '원';
+
+                    //장바구니 콜라 생성
+                    this.stagedItemGenerator(event.currentTarget);
+                    // for (const item of this.stagedList) {
+
+                    // }
+
+                } else {
+                    alert('입금한 금액이 부족합니다.');
+                }
+            })
+        })
     }
 }
 
