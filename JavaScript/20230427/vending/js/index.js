@@ -5,3 +5,4 @@ const colaGenerator = new ColaGenerator();
 const vendingMachineEvents = new VendingMachineEvents();
 
 colaGenerator.setup();
+vendingMachineEvents.bindEvent();
