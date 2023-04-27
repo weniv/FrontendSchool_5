@@ -5,7 +5,6 @@ class ColaGenerator {
 
     async setup() {
         const response = await this.loadData();
-
         this.colaFactory(response);
     }
 
@@ -25,7 +24,7 @@ class ColaGenerator {
     }
 
     colaFactory(data) {
-
+        const docFrag = document.createDocumentFragment();
         data.forEach((el) => {
             const item = document.createElement('li');
             const itemTemplate = `
@@ -37,12 +36,10 @@ class ColaGenerator {
             `;
 
             item.innerHTML = itemTemplate;
-            this.itemList.append(item);
+            docFrag.append(item);
         })
-
+        this.itemList.append(docFrag);
     }
-
-
 }
 
 export default ColaGenerator;
