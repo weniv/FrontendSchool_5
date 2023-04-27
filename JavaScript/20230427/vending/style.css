@@ -1,0 +1,257 @@
+/* reset */
+body,
+h1,
+h2,
+p,
+ul,
+button {
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+button {
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+}
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+/* 접근성을 위한 숨김처리 */
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+/* layout-------------------- */
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+/* h1 */
+h1 {
+  text-align: center;
+}
+h1 img {
+  width: 386px;
+  max-width: calc(100% - (97px * 2));
+}
+section {
+  background: #fff;
+}
+
+/* pc */
+@media (min-width: 748px) {
+  body {
+    background: #eae8fe;
+  }
+
+  main {
+    width: 748px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px auto;
+    grid-template-areas:
+      "section1 section2"
+      "section1 section3";
+    gap: 20px 28px;
+  }
+
+  .section1 {
+    grid-area: section1;
+  }
+
+  .section2 {
+    grid-area: section2;
+  }
+
+  .section3 {
+    grid-area: section3;
+  }
+  h1 {
+    margin-bottom: 68px;
+  }
+}
+/* mobile */
+@media (max-width: 747px) {
+  h1 {
+    margin-bottom: 18px;
+  }
+}
+
+.section1 {
+  padding: 31px 27px 28px;
+}
+/* 판매 음료 */
+.cola-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.btn-cola {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 11px 12px 9px;
+  position: relative;
+  width: 100%;
+}
+.btn-cola.active {
+  box-shadow: 0 0 0 3px #6327fe;
+}
+.cola-img,
+.cola-name,
+.cola-price {
+  display: block;
+}
+.cola-img {
+  width: 36px;
+  margin: auto;
+}
+.cola-name {
+  font-size: 9px;
+  margin: 6px 0;
+}
+.cola-price {
+  font-size: 12px;
+  font-weight: 500;
+  background: #6327fe;
+  color: #fff;
+  padding: 2px 0;
+  border-radius: 20px;
+}
+
+.soldout {
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.soldout span {
+  display: inline-block;
+  color: #eae8fe;
+  border: 6px double #eae8fe;
+  padding: 0 8px;
+  transform: rotate(-20deg) translate(-10px, 30px);
+}
+
+/* 잔액 및 장바구니 */
+.container {
+  display: grid;
+  grid-template-columns: auto calc((100% - 24px) / 3);
+  grid-template-rows: 32px 32px 106px;
+  gap: 12px;
+  margin-top: 20px;
+}
+.bg-box {
+  background: #eae8fe;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+}
+.bg-box .title,
+.bg-box p {
+  font-size: 14px;
+  font-weight: 500;
+}
+.bg-box .title::after {
+  content: " :";
+}
+
+/* section2 */
+.section2 {
+  padding: 9px 27px;
+}
+
+.btn,
+.btn-get {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  font-size: 13px;
+}
+.btn-get {
+  background: #6327fe;
+  color: #fff;
+}
+#input-money {
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  padding: 0 6px;
+  font-size: 13px;
+}
+#input-money::placeholder {
+  color: #bdbdbd;
+}
+
+.get-list {
+  background: #eae8fe;
+  border-radius: 5px;
+  border: 1px solid #bdbdbd;
+  overflow-y: auto;
+  padding: 12px;
+}
+.get-list li {
+  background: #fff;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 9px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.get-list li:first-child ~ li {
+  margin-top: 6px;
+}
+.get-list li img {
+  width: 18px;
+}
+.get-list li strong {
+  font-size: 14px;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  margin-left: auto;
+  /* margin: auto 0 auto auto; */
+}
+
+.section3 {
+  padding: 25px 27px 26px;
+}
+
+.get-title {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 13px;
+}
+.total-price {
+  font-size: 12px;
+  text-align: right;
+  margin-top: 6px;
+}
+.section3 {
+  display: flex;
+  flex-direction: column;
+}
+.section3 .get-list {
+  flex-grow: 1;
+}
