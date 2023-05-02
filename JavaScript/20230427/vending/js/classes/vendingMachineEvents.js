@@ -152,13 +152,16 @@ class VendingMachineEvents {
          */
 
         this.btnGet.addEventListener('click', () => {
+            // const itemStagedList = this.stagedList.children;
+            // const itemGetList = this.getList.children;
             const itemStagedList = this.stagedList.querySelectorAll('li');
             const itemGetList = this.getList.querySelectorAll('li');
-            let isGet = false; // 이미 획득했는가?
-            console.log(this.stagedList.children);
+            let totalPrice = 0;
 
             for (const itemStaged of itemStagedList) {
+                let isGet = false; // 이미 획득했는가?
                 for (const itemGet of itemGetList) {
+                    console.log(itemStaged.querySelector('strong'));
                     // 장바구니의 콜라가 이미 획득한 목록에 있다면
                     if (itemStaged.dataset.item === itemGet.dataset.item) {
                         // 이미 장바구니에 콜라가 있다면 카운트 +1
@@ -174,7 +177,15 @@ class VendingMachineEvents {
                 }
             }
 
+            // 장바구니 목록 초기화
             this.stagedList.innerHTML = null;
+
+
+            // 획득한 음료 리스트를 순회하면서 총금액을 계산합니다.
+            this.getList.querySelectorAll('li').forEach((itemGet) => {
+                totalPrice += parseInt(itemGet.dataset.price) * parseInt(itemGet.querySelector('strong').firstChild.textContent);
+            });
+            this.txtTotal.textContent = `총금액 : ${new Intl.NumberFormat().format(totalPrice)} 원`;
         });
 
     }
