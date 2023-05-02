@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        function Header(menuOne, menuTwo) {
+            return (
+                <div>header
+                    <div>menu</div>
+                    <div>{menuOne}</div>
+                    <div>{menuTwo}</div>
+                </div>
+            )
+        }
+
+        function Main({ name, age }) {
+            console.log(name, age)
+            return (
+                <div>main
+                    <h1>hello {name}</h1>
+                    <p>hello {age}</p>
+                </div>
+            )
+        }
+
+        // function Product() {
+        //     return (
+        //         <div>product
+        //             <div>best seller 옷1</div>
+        //             <div>best seller 옷2</div>
+        //             <div>best seller 옷3</div>
+        //             <div>best seller 옷4</div>
+        //             <div>best seller 옷5</div>
+        //             <div>best seller 옷6</div>
+        //             <div>best seller 옷7</div>
+        //         </div>
+        //     )
+        // }
+
+        function Footer() {
+            return <div>footer</div>
+        }
+
+        function f() {
+            return 100
+        }
+
+        function 로그아웃() {
+            return <button>로그아웃</button>
+        }
+
+        function 로그인() {
+            return (
+                <div>
+                    <input type="text" />
+                    <input type="password" />
+                    <button>로그인</button>
+                </div>
+            )
+        }
+
+        function Test(props) {
+            console.log(props)
+            return null
+        }
+
+        const login = true;
+
+        const body = (
+            <div>
+                {/*JSX의 주석은 이렇게 표현합니다. */}
+                {/*이렇게 값을 전달할 수 있습니다.*/}
+                {Header('about', 'product')}
+                <Main name='hojun' age='10' />
+
+                {/*여러가지 표현식 사용이 가능합니다.*/}
+                {console.log('hello')}
+                {1 + 1}
+                {'hello' + 'world'}
+                {'<br>'}
+                {f()}
+                {login ? 'one' : 'two'}
+                {login ? <로그아웃 /> : <로그인 />}
+
+                <Test>
+                    hello world 1
+                    <h1>hello world 2</h1>
+                    <h2>hello world 3</h2>
+                    <Footer />
+                </Test>
+            </div>
+        )
+
+        const domContainer = document.querySelector('#root');
+        const root = ReactDOM.createRoot(domContainer);
+        root.render(body);
+    </script>
+</body>
+
+</html>

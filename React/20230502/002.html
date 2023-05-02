@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // js로 만들어보는 돔
+        function GreetingJs({ name }) {
+            const h1 = document.createElement('h1');
+            h1.classList.add('greeting');
+            h1.appendChild(document.createTextNode('hello'));
+
+            const elI = document.createElement('i');
+            elI.appendChild(document.createTextNode(name));
+            h1.appendChild(elI);
+            h1.appendChild(document.createTextNode('. Welcome!'));
+
+            return h1;
+
+            // const h1 = document.createElement('h1');
+            // h1.innerHTML = `<h1 class="greeting">Hello<i>재현</i>. Welcome!</h1>`;
+
+
+        }
+
+        // 리액트로 만드는 돔
+        function GreetingVdom({ name }) {
+            return React.createElement(
+                'h1',
+                { className: 'greeting' },
+                'Hello',
+                React.createElement(
+                    'i',
+                    null,
+                    name
+                ),
+                '. Welcome!'
+            );
+        }
+
+
+        function GreetingJsx({ name }) {
+            return (
+                <h1 className="greeting">
+                    Hello<i>재현</i>. Welcome!
+                </h1>
+            )
+        }
+
+
+        function App() {
+            return React.createElement(
+                GreetingJsx, { name: '재현' }
+            )
+        }
+
+        const root = document.getElementById('root');
+        // root.appendChild(GreetingJs({ name: '재현' }));
+
+        const rootReact = ReactDOM.createRoot(root);
+
+        rootReact.render(
+            <App />
+        );
+
+    </script>
+</body>
+
+</html>
