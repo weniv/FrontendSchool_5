@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  height: 5000px;
+  background: linear-gradient(to bottom, gold, royalblue);
+}
+
+svg {
+  width: 100%;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+path {
+  fill: none;
+  stroke: white;
+  stroke-width: 5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

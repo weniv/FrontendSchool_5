@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    :root {
+      /* 최소 130*/
+      --width: 450px;
+      --height: 400px;
+
+      /* 최소 40*/
+      --border: 40px;
+
+      /* 최소 120*/
+      --margin-top: 200px;
+      --margin-left: 460px;
+
+      --content-height: auto;
+    }
+
+    body,
+    p {
+      margin: 0;
+    }
+
+    .wrap {
+      width: calc(var(--width) + var(--border)*2 + var(--margin-left));
+      height: calc(var(--height) + var(--border)*2 + var(--margin-top));
+
+      position: relative;
+    }
+
+    .box {
+      width: var(--width);
+      height: var(--height);
+      border: var(--border) solid gold;
+      font-size: 20px;
+      line-height: 1.4;
+      overflow-y: auto;
+      position: absolute;
+      top: var(--margin-top);
+      left: var(--margin-left);
+    }
+
+    .box p:first-child {
+      margin-bottom: 16px;
+    }
+
+    .box .inner {
+      height: var(--content-height);
+    }
+
+    .ruler {
+      position: absolute;
+      border: 2px solid #000;
+      box-sizing: border-box;
+
+    }
+
+    [class$="width"].ruler,
+    [class$="left"].ruler {
+      height: 1.4em;
+      border-width: 0 3px;
+    }
+
+    [class$="height"].ruler,
+    [class$="top"].ruler {
+      width: 1.4em;
+      border-width: 3px 0;
+    }
+
+    .ruler::before {
+      content: '';
+      display: block;
+      background-color: #000;
+      position: absolute;
+    }
+
+    [class$="width"].ruler::before,
+    [class$="left"].ruler::before {
+      width: 100%;
+      height: 1px;
+      top: 50%;
+      left: 0;
+    }
+
+    [class$="height"].ruler::before,
+    [class$="top"].ruler::before {
+      width: 1px;
+      height: 100%;
+      top: 0;
+      left: 50%;
+    }
+
+    .ruler span {
+      position: relative;
+      background-color: #fff;
+      display: inline-block;
+      padding: 0 4px;
+      z-index: 100;
+      box-sizing: border-box;
+      width: max-content;
+      text-align: center;
+    }
+
+    [class$="width"].ruler span,
+    [class$="left"].ruler span {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    [class$="height"].ruler span,
+    [class$="top"].ruler span {
+      top: 50%;
+      transform: translate(-40%, -50%) rotate(-90deg);
+    }
+
+
+
+    /* 개별 위치 */
+    .c-top,
+    .c-left {
+      position: absolute;
+      width: var(--border);
+    }
+
+    .c-top {
+      top: var(--margin-top);
+      left: calc(var(--margin-left) + var(--border));
+      height: var(--border)
+    }
+
+    .c-left {
+      top: calc(var(--margin-top) + var(--border));
+      left: var(--margin-left);
+      width: var(--border)
+    }
+
+    .ruler.c-top span {
+      transform: translate(-20%, -50%) rotate(0deg);
+      background-color: gold;
+
+    }
+
+    .ruler.c-left span {
+      background-color: gold;
+      transform: translate(-50%, 150%) rotate(-90deg);
+    }
+
+
+
+
+    .o-top {
+      top: 0;
+      left: calc(var(--margin-left));
+      height: var(--margin-top);
+    }
+
+    .o-left {
+      top: var(--margin-top);
+      left: 0;
+      width: var(--margin-left);
+    }
+
+
+
+
+    /* width */
+    .c-width {
+      color: royalblue;
+      top: calc(var(--margin-top) + var(--border)*2 + var(--height));
+      left: calc(var(--margin-left) + var(--border));
+      width: calc(var(--width))
+    }
+
+    .o-width {
+      color: slateblue;
+      top: calc(var(--margin-top) + var(--border)*2 + var(--height) + 2em);
+      left: var(--margin-left);
+      width: calc(var(--width) + var(--border)*2)
+    }
+
+    .c-height {
+      color: royalblue;
+      top: calc(var(--margin-top) + var(--border));
+      left: calc(var(--margin-left) + var(--width) + var(--border)*2);
+      height: var(--height);
+    }
+
+    .o-height {
+      color: slateblue;
+      top: var(--margin-top);
+      left: calc(var(--margin-left) + var(--width) + var(--border)*2 + 2em);
+      height: calc(var(--height) + var(--border)*2);
+    }
+
+    .s-top,
+    .s-height {
+      display: none;
+    }
+
+    .s-top {
+      left: calc(var(--margin-left) + var(--width) + var(--border)*2 + 2em);
+    }
+
+    .s-height {
+      left: calc(var(--margin-left) + var(--width) + var(--border)*2 + 4em);
+    }
+  </style>
+</head>
+
+<body>
+  <span class="inner-height">innerHeight: <strong></strong></span>
+  <span class="outer-height">outerHeight: <strong></strong></span>
+  <div class="wrap">
+    <div class="box">
+      <div class="inner">
+        <p>무엇이 천하를 그림자는 풀이 희망의 사막이다. 피가 별과 발휘하기 광야에서 예가 사막이다. 우리 이 소금이라 같으며, 주며, 예수는 이것이야말로 커다란 있으랴? 이상 인간에 거친 이는 풀밭에
+          무엇을
+          부패뿐이다. 붙잡아 옷을 온갖 웅대한 구하지 것은 싸인 약동하다. 군영과 우리는 눈에 가진 이상이 것이다. 가는 끝에 심장은 거친 이상의 커다란 없으면 온갖 피다. 온갖 얼음에 오직 되는 광야에서
+          영락과
+          속잎나고, 가치를 대중을 아름다우냐? 무엇을 있는 인생을 그것은 것이다. 예가 인간은 설산에서 사랑의 더운지라 못할 이것이다. 이상의 불어 뛰노는 봄바람이다.</p>
+
+        <p>보배를 이상을 새 눈이 인간이 피가 것이다. 갑 무엇을 때까지 끝까지 노래하며 위하여서 바이며, 것이다. 앞이 용감하고 낙원을 피어나는 이상은 칼이다. 능히 이상의 그러므로 속에서 넣는 바로
+          노래하며
+          붙잡아 소금이라 황금시대다. 그들은 있으며, 얼음 쓸쓸하랴? 듣기만 뛰노는 장식하는 대한 사막이다. 옷을 원대하고, 인생에 있으랴? 행복스럽고 따뜻한 동력은 청춘을 대중을 칼이다. 광야에서 인간의
+          돋고,
+          부패뿐이다. 가슴에 간에 인도하겠다는 과실이 듣는다. 하는 노년에게서 실로 생생하며, 이상은 피어나는 것이다.</p>
+      </div>
+    </div>
+
+    <div class="ruler c-top">
+      <span>clientTop: <strong></strong></span>
+    </div>
+    <div class="ruler c-left">
+      <span>clientLeft: <strong></strong></span>
+    </div>
+    <div class="ruler c-width">
+      <span>clientWidth: <strong></strong></span>
+    </div>
+    <div class="ruler c-height">
+      <span>clientHeight: <strong></strong></span>
+    </div>
+    <div class="ruler o-top">
+      <span>offsetTop: <strong></strong></span>
+    </div>
+    <div class="ruler o-left">
+      <span>offsetLeft: <strong></strong></span>
+    </div>
+    <div class="ruler o-width">
+      <span>offsetWidth: <strong></strong></span>
+    </div>
+    <div class="ruler o-height">
+      <span>offsetHeight: <strong></strong></span>
+    </div>
+    <div class="ruler s-top">
+      <span>scrollTop: <strong></strong></span>
+    </div>
+    <div class="ruler s-height">
+      <span>scrollHeight: <strong></strong></span>
+    </div>
+  </div>
+  <script>
+    document.querySelector('.inner-height').querySelector('strong').innerHTML = window.innerHeight;
+    document.querySelector('.outer-height').querySelector('strong').innerHTML = window.outerHeight;
+    // window
+    window.addEventListener("resize", function () {
+      document.querySelector('.inner-height').querySelector('strong').innerHTML = window.innerHeight;
+      document.querySelector('.outer-height').querySelector('strong').innerHTML = window.outerHeight;
+    });
+
+
+    const box = document.querySelector('.box');
+
+    // box
+    document.querySelector('.c-top').querySelector('strong').innerHTML = box.clientTop;
+    document.querySelector('.c-left').querySelector('strong').innerHTML = box.clientLeft;
+    document.querySelector('.c-width').querySelector('strong').innerHTML = box.clientWidth;
+    document.querySelector('.c-height').querySelector('strong').innerHTML = box.clientHeight;
+
+    document.querySelector('.o-top').querySelector('strong').innerHTML = box.offsetTop;
+    document.querySelector('.o-left').querySelector('strong').innerHTML = box.offsetLeft;
+    document.querySelector('.o-width').querySelector('strong').innerHTML = box.offsetWidth;
+    document.querySelector('.o-height').querySelector('strong').innerHTML = box.offsetHeight;
+
+    // scroll
+    document.querySelector('.s-height').querySelector('strong').innerHTML = box.scrollHeight;
+    box.addEventListener("scroll", function () {
+      document.querySelector('.s-top').querySelector('strong').innerHTML = box.scrollTop;
+    });
+
+  </script>
+
+
+</body>
+
+</html>
