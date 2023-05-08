@@ -1,7 +1,8 @@
 import React from 'react'
+import './DisplayMood.css'
 
 export default function DisplayMood() {
     return (
-        <div>DisplayMood</div>
+        <div className='container'>DisplayMood</div>
     )
 }

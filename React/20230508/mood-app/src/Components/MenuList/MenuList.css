@@ -1,0 +1,10 @@
+.container-list {
+    height: 250px;
+    width: 250px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    list-style: none;
+}

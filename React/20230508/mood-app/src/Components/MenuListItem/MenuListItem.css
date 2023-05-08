@@ -1,0 +1,12 @@
+.btn-item {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.btn-item:hover {
+    background-color: yellowgreen;
+}
