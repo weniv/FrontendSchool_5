@@ -8,7 +8,8 @@ export default function MenuList(props) {
     return (
         <ul className='container-list'>
             {menus.map((moodEl) => {
-                return <MenuListItem mood={moodEl} isSelected={props.mood === moodEl} onClick={props.onItemClick} />
+                // mood : 기분의 텍스트, isSelected : 현재 사용자의 기분이 맞는지 전달, onClickEvt : 현재 기분을 변경하는 함수
+                return <MenuListItem mood={moodEl} isSelected={props.mood === moodEl} onClickEvt={props.onItemClick} />
             })}
         </ul>
     )
