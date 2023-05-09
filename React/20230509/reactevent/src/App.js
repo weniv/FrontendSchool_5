@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Login from './Login';
 import Homepage from "./Homepage";
+import Modal from "./Modal";
 
 function App() {
   const user = {
@@ -12,8 +13,13 @@ function App() {
 
   console.log(login);
   return (
-    login ? <Homepage /> : < Login infoUser={user} setLogin={setLogin} />
+    <>
+      login ? <Homepage /> : < Login infoUser={user} setLogin={setLogin} />
+      < Modal />
+    </>
   )
+
+
 }
 
 export default App;
