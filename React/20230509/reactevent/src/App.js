@@ -15,7 +15,11 @@ function App() {
   return (
     <>
       login ? <Homepage /> : < Login infoUser={user} setLogin={setLogin} />
-      < Modal />
+      < Modal>
+        <h2>사용약관에 대해 말씀드리겠습니다.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi illum laborum, quo facilis eaque quam optio aliquam nam provident. Laboriosam delectus, atque doloremque nam harum molestias ab quisquam! Quis, pariatur.</p>
+        <a href="#none">더 보기</a>
+      </Modal>
     </>
   )
 
