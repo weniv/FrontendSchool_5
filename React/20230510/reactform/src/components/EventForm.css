@@ -1,0 +1,15 @@
+.event-form {}
+
+.event-form label,
+.event-form input {
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+    padding: 20px;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+.event-form button {
+    float: right;
+}
