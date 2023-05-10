@@ -1,11 +1,14 @@
-.event-form {}
+.event-form {
+    display: flow-root;
+    padding: 20px;
+}
 
 .event-form label,
 .event-form input {
     display: block;
     width: 100%;
     margin: 10px auto;
-    padding: 20px;
+    padding: 20px 0;
     font-size: 18px;
     box-sizing: border-box;
 }
