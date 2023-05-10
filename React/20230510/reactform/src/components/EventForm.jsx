@@ -9,6 +9,7 @@ export default function EventForm({ addData }) {
     function resetForm() {
         setTitle('');
         setDate('');
+        setFood('짜장면');
     }
 
     function handleSubmit(event) {
@@ -18,17 +19,17 @@ export default function EventForm({ addData }) {
             id: Math.floor(Math.random() * 10000),
             title: title,
             date: date,
+            food: food
         }
 
-        console.log(formData);
-
-
         addData(formData);
+        resetForm();
     }
 
 
     const [title, setTitle] = useState('');
     const [date, setDate] = useState('');
+    const [food, setFood] = useState('짜장면');
 
 
     return (
@@ -41,6 +42,14 @@ export default function EventForm({ addData }) {
                 <strong>Event date : </strong>
                 <input type="date" value={date} onChange={(event) => setDate(event.target.value)} />
             </label>
+            <label>
+                <select value={food} onChange={(event) => { setFood(event.target.value) }}>
+                    <option value="짜장면">짜장면</option>
+                    <option value="유산슬">유산슬</option>
+                    <option value="탕수육">탕수육</option>
+                </select>
+            </label>
+
             <button type='submit'>제출하기</button>
             <button type='reset' onClick={resetForm}>초기화</button>
         </form>
