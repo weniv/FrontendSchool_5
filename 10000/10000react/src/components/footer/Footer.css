@@ -1,0 +1,10 @@
+.cont-footer {
+    font-family: Noto Sans KR;
+    font-size: 12px;
+    line-height: 17px;
+}
+
+.cont-footer img {
+    width: 125px;
+    margin: 0 auto 20px;
+}
