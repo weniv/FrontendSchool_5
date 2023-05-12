@@ -5,7 +5,7 @@ import './Header.css'
 
 export default function Header() {
     return (
-        <header>
+        <header className='header-law'>
             <h1 className="tit-law">
                 <img src={title} alt="1만시간의법칙" className="img-tit" />
             </h1>
