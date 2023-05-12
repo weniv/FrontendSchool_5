@@ -1,9 +1,9 @@
-div {
+.box {
     margin: 40px;
     background: blanchedalmond;
 }
 
-h2 {
+.text {
     width: 200px;
     margin: 0 auto;
     text-align: center;

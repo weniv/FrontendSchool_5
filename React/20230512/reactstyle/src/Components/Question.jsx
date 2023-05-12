@@ -1,9 +1,10 @@
 import React from "react";
+import styles from './Question.module.css'
 
 const Question = () => {
     return (
-        <div className="box">
-            <h2 className="text">Q&A</h2>
+        <div className={styles.box}>
+            <h2 className={styles.text}>Q&A</h2>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos excepturi
                 corrupti quo blanditiis! Adipisci amet corporis ipsum odio minima
