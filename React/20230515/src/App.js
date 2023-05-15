@@ -1,23 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import './'
+import Com from './TryUseEffect';
+import RouteStudy from './RouterSolve/RouteStudy';
+
+
+// - **Home Page :** /
+// - **Product Detail Page** : /products/:id
+//     - ex) /products/1 , /products/2, /products/3, /products/4
+// - **Product Detail Notice Page :** /products/:id/notice
+//     - ex) /products/1/notice , /products/2/notice…
+// - **Cart Page :** /cart
+// - **Coupon Page :** /users/coupon
+// - **Question Page :** /users/question
+// - **Notice Page :** /users/notice
+// - **User Page :** /users
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <RouteStudy/>
     </div>
   );
 }
