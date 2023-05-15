@@ -7,6 +7,7 @@ import Counter from './HookUseEffect/TryUseEffect';
 import Time from './HookUseEffect/Quiz2';
 import Counter2 from './HookUesRef/TryUseRef';
 import TryUseRefDom from './HookUesRef/TryUseRefDom';
+import TryUseMemo from './HookUseMemo/TryUseMemo';
 
 
 
@@ -19,7 +20,8 @@ function App() {
       {/* <Counter/> */}
       {/* <Time/> */}
       {/* <Counter2/> */}
-      <TryUseRefDom/>
+      {/* <TryUseRefDom/> */}
+      <TryUseMemo/>
     </div>
   );
 }
