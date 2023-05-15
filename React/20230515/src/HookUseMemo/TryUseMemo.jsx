@@ -24,7 +24,8 @@ function TryUseMemo() {
   };
 
   console.log("랜더링!!");
-
+  // 평소에는 memo되어있는걸 가져다쓰고
+  // countTwo가 바뀌었을때 부하 함수를 실행키는 메모
   const result = useMemo(부하, [countTwo]);
 
   return (
