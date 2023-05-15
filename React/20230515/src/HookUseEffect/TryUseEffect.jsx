@@ -11,7 +11,7 @@ function Counter() {
     // 이게 처음들어왔을때를 감지해서 안실행시키고싶다.
     // 실행을 시켜야할지 말아야할지에 대한 상태를 만들어줄까..?
     if (isFirstRender) {
-      console.log("난 처음 렌더링되었는지 확인하고있지. 첫번째군");
+      console.log("난 처음 렌더링되었는지 확인하고있지. 첫");
       setIsFirstRender(false);
     } else {
       console.log("난 처음 렌더링되었는지 확인하고있지. 근데이건 두번째지");
