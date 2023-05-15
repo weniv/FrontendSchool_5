@@ -82,8 +82,9 @@ function Products() {
   );
 }
 function ProductNotice() {
-  const { id } = useParams();
-  return <h1>hello Products {id} Notice </h1>;
+  const pram = useParams();
+  console.log(pram);
+  return <h1>hello Products {pram.id} Notice </h1>;
 }
 
 function HojunIndex() {
