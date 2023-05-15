@@ -19,9 +19,17 @@ import {
 // - **Notice Page :** /users/notice
 
 function RouteSolve() {
+  const productIds = [1, 2, 3, 4, 5];
   return (
     <BrowserRouter>
       <h1>퀴즈</h1>
+      <Link to="/">홈페이지</Link>
+      {productIds.map((productId) => (
+        <Link to={`/products/${productId}`}>상품{productId}</Link>
+      ))}
+      <Link to="/users">Users</Link>
+      <Link to="/cart">Cart</Link>
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/products/:id" element={<Products />} />
@@ -48,6 +56,12 @@ function Cart({ name }) {
 function Users() {
   return (
     <div>
+      <Link to="/users/coupon">usersCoupon</Link>
+      <br />
+      <Link to="/users/notice">Notice</Link>
+      <br />
+      <Link to="/users/question">Question</Link>
+      <br />
       <h1>여기는 Users</h1>
       <Outlet />
     </div>
@@ -60,7 +74,12 @@ function Three() {
 
 function Products() {
   const { id } = useParams();
-  return <h1>hello Products {id}</h1>;
+  return (
+    <div>
+      <h1>hello Products {id}</h1>
+      <Link to="./notice">Notice</Link>
+    </div>
+  );
 }
 function ProductNotice() {
   const { id } = useParams();
