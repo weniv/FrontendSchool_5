@@ -13,23 +13,26 @@ const HelloLicat = () => {
   return (
     <UserInfo.Consumer>
       {(value) => {
-        { console.log(value) }
-        <div>
+        return <div>
           <h2>{value.id}</h2>
           <strong>{value.name}</strong>
-          {/* <HelloLicatTwo value={{ name: props.value.name, id: props.value.id }} /> */}
+          <HelloLicatTwo />
         </div>
       }}
     </UserInfo.Consumer>
   );
 };
 
-const HelloLicatTwo = (props) => {
+const HelloLicatTwo = () => {
   return (
-    <div>
-      <h2>Two : {props.value.id}</h2>
-      <strong>Two : {props.value.name}</strong>
-    </div>
+    <UserInfo.Consumer>
+      {(value) => {
+        return <div>
+          <h2>Two : {value.id}</h2>
+          <strong>Two : {value.name}</strong>
+        </div>
+      }}
+    </UserInfo.Consumer>
   );
 };
 
