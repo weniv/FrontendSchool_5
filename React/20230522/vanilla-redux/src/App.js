@@ -1,7 +1,9 @@
+import GoodsCounter from "./components/GoodsCounter";
+
 function App() {
   return (
     <div>
-      hello world
+      <GoodsCounter />
     </div>
   );
 }
