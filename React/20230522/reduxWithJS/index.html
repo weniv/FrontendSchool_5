@@ -69,9 +69,15 @@
     <input type="button" value="Rect!" onclick="
     store.dispatch({type: 'STYLE_BORDER', borderRadius:'0px'});
     ">
-    <input type="button" value="Red!">
-    <input type="button" value="Green!">
-    <input type="button" value="Blue!">
+    <input type="button" value="Red!" onclick="
+    store.dispatch({type: 'STYLE_BORDER_COLOR', border:'5px solid red'});
+    ">
+    <input type="button" value="Green!" onclick="
+    store.dispatch({type: 'STYLE_BORDER_COLOR', border:'5px solid green'});
+    ">
+    <input type="button" value="Blue!" onclick="
+    store.dispatch({type: 'STYLE_BORDER_COLOR', border:'5px solid blue'});
+    ">
     <br>
     <br>
     <div class="container">
@@ -100,6 +106,10 @@
             } else if (action.type === 'STYLE_BORDER') {
                 return {
                     ...state, borderRadius: action.borderRadius
+                }
+            } else if (action.type === 'STYLE_BORDER_COLOR') {
+                return {
+                    ...state, border: action.border
                 }
             }
         }
