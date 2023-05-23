@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        article {
+            display: inline-block;
+            border: 3px solid black;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .viewer {
+            display: block;
+            font-size: 24px;
+            color: green;
+            margin: 50px 0 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <strong class="viewer"></strong>
+        <input type="text" class="inp-txt">
+        <!-- 서로 다른 언어가 섞여있습니다. -->
+        <button class="btn-push" onclick="push()">적용</button>
+    </article>
+    <script>
+        // 함수 밖의 내용들은 테스트가 불가능합니다.
+        let txt = "hello lions";
+        const viewer = document.querySelector(".viewer");
+        viewer.textContent = txt;
+
+        // 재사용성이 떨어진다. inp-txt 라는 클래스를 가진 요소가 존재해야만 한다!
+        function push() {
+            const inpTxt = document.querySelector('.inp-txt');
+            viewer.textContent = inpTxt.value;
+        }
+
+        // 테스트 가능한 코드란!
+        // 1. 테스트할 코드를 UI에서 완전히 분리해야합니다.
+        // 2. 자바스크립트를 JS파일로 따로 분리해야합니다.
+        // 3. 모든 기능은 함수로 구현합니다.
+    </script>
+</body>
+
+</html>
