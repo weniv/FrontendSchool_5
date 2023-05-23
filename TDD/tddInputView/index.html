@@ -33,7 +33,14 @@
     <script src="textManager.js"></script>
     <script src="viewManager.js"></script>
     <script>
-
+        (() => {
+            const viewerEl = document.querySelector(".viewer");
+            const inpTxt = document.querySelector('.inp-txt');
+            const btnEl = document.querySelector('.btn-push');
+            const textManager = new TextManager();
+            const viewManager = new ViewManager(textManager, { viewerEl, inpTxt, btnEl });
+            viewManager.updateView();
+        })()
     </script>
 </body>
 
