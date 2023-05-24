@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 안녕하세요 ==> 요세하녕안
+        function reverseStr(str) {
+            if (str.length < 2 || typeof str !== 'string') {
+                return '문자열을 넣어주세요'
+            }
+
+            const data = [];
+            const lastIndex = str.length - 1;
+
+            for (let i = lastIndex; i >= 0; i--) {
+                data.push(str[i]);
+            }
+
+            // data => [요,세,하,녕,안];
+            //요,세,하,녕,안
+            return data.join('');
+        }
+
+        function reverseStr(str) {
+            const s = new Array();
+            for (i of str) {
+                s.unshift(i)
+                console.log(s);
+            }
+            return s.join('')
+        }
+
+        function reverseStr(str) {
+            return str.split("").reverse().join("")
+        }
+
+        const reverseStr = (str) => [...str].reverse().join("");
+
+
+        console.log(reverseStr('안녕하세요'));
+
+    </script>
+</body>
+
+</html>
