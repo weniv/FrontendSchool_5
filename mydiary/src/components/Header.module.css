@@ -1,0 +1,17 @@
+header {
+    background-color: white;
+}
+
+.header-wrap {
+    width: 1224px;
+    max-width: calc(100% - 60px);
+    height: 120px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 75px;
+}
