@@ -12,11 +12,6 @@ export const useLogin = () => {
 
     const { dispatch } = useAuthContext();
 
-    console.log(appAuth.currentUser);
-    setInterval(() => {
-        console.log(appAuth.currentUser);
-    }, 1000)
-
     const login = (email, password) => {
         setError(null);
         setPending(true);

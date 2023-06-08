@@ -20,6 +20,12 @@
     "css-loader": "^6.8.1",
     "dotenv": "^16.1.4",
     "html-webpack-plugin": "^5.5.1",
+    "image-minimizer-webpack-plugin": "^3.8.2",
+    "imagemin": "^8.0.1",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^10.0.1",
     "style-loader": "^3.3.3",
     "webpack": "^5.84.1",
     "webpack-cli": "^5.1.1"
