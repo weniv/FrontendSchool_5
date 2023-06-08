@@ -10,12 +10,16 @@ const AuthContextProvider = ({ children }) => {
         switch (action.type) {
             case 'login':
                 return { ...state, user: action.payload }
+            case 'logout':
+                return { ...state, user: null }
             default:
                 return state
         }
     }
 
     const [state, dispatch] = useReducer(authReducer, { user: null });
+
+    console.log('context : ', state);
 
     return (
         <AuthContext.Provider value={{ ...state, dispatch }}>
