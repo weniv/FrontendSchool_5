@@ -14,7 +14,7 @@ export default function Home() {
     const day = String(date.getDate()).padStart(2, '0');
     const result = `${year}.${month}.${day}`;
     const { user } = useAuthContext();
-    const { documents, error } = useCollection('secretDiary');
+    const { documents, error } = useCollection('secretDiary', ["uid", "==", user.uid]);
 
     return (
         <div className={styles.container}>
@@ -25,7 +25,7 @@ export default function Home() {
             <section>
                 <h2 className="a11y-hidden">일기 목록</h2>
                 <ul>
-                    {error && <strong>error</strong>}
+                    {error && <strong>{error}</strong>}
                     {documents && <DiaryList diaries={documents} />}
                 </ul>
             </section>

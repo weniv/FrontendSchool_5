@@ -136,6 +136,7 @@ h3 {
 }
 
 .container section {
+    flex-grow: 1;
     padding-top: 94px;
 }
 

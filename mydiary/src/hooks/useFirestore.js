@@ -1,4 +1,4 @@
-import { collection, addDoc } from "firebase/firestore"
+import { collection, addDoc, doc, deleteDoc } from "firebase/firestore"
 import { useReducer } from "react"
 import { appFireStore, Timestamp } from "../firebase/config"
 
@@ -27,19 +27,28 @@ export const useFirestore = (transaction) => {
     const [response, dispatch] = useReducer(storeReducer, initState);
 
     const colRef = collection(appFireStore, transaction);
+    console.log(colRef);
 
     const addDocument = async (doc) => {
         dispatch({ type: "isPending" });
         try {
             const createTime = Timestamp.fromDate(new Date());
             const docRef = await addDoc(colRef, { ...doc, createTime });
+            console.log(docRef);
             dispatch({ type: "addDoc", payload: docRef });
         } catch (error) {
             dispatch({ type: "error", payload: error.message })
         }
     }
 
-    const deleteDocument = (id) => {
+    const deleteDocument = async (id) => {
+        dispatch({ type: "pending" });
+        try {
+            const docRef = await deleteDoc(doc(colRef, id));
+            dispatch({ type: "deleteDoc", payload: docRef });
+        } catch (error) {
+            dispatch({ type: "error", payload: error.message });
+        }
 
     }
 
