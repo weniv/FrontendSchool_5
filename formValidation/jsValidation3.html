@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="email" required>
+        <input type="url" required>
+        <button>제출!</button>
+    </form>
+    <script>
+        const btn = document.querySelector('button');
+        const inps = document.querySelectorAll('input');
+        btn.addEventListener('click', () => {
+            inps.forEach((inp) => {
+                validate(inp);
+            })
+        })
+
+        function validate(target) {
+            if (target.validity.valueMissing) {
+                target.setCustomValidity('값이 없습니다. 정신 차리자.');
+            } else if (target.validity.typeMismatch) {
+                target.setCustomValidity('알맞은 양식의 데이터를 입력하세요!');
+            } else {
+                target.setCustomValidity('');
+            }
+        }
+    </script>
+</body>
+
+</html>

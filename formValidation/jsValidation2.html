@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="email" required>
+        <button>제출!</button>
+    </form>
+    <script>
+        const btn = document.querySelector('button');
+        const inp = document.querySelector('input');
+        btn.addEventListener('click', () => {
+            if (inp.validity.typeMismatch) {
+                inp.setCustomValidity('알맞은 양식의 이메일 주소를 입력하세요!');
+            } else {
+                inp.setCustomValidity('');
+            }
+        })
+    </script>
+</body>
+
+</html>

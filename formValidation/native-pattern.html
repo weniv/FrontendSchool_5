@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label {
+            display: block;
+        }
+
+        input:invalid {
+            border: 3px solid red;
+        }
+
+        input:valid {
+            border: 3px solid teal
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <label for="">사과를 입력하세요</label>
+        <input type="text" pattern="사과">
+
+        <label for="">사과와 배중 하나를 입력하세요</label>
+        <input type="text" pattern="사과|배">
+
+        <label for="">모든 문자중에 세글자만 입력하세요</label>
+        <input type="text" pattern="...">
+
+        <label for="">첫번째 문자는 사, 과, 배 , 두번째 문자는 1,2,3 만 입력가능합니다.</label>
+        <input type="text" pattern="[사,과,배][1,2,3]">
+
+        <label for="">한글만 입력이 가능합니다.</label>
+        <input type="text" pattern="[ㄱ-ㅎㅏ-ㅗ가-힣]">
+
+        <label for="">한글만 글자수 제한 없이 입력이 가능합니다.</label>
+        <input type="text" pattern="[ㄱ-ㅎㅏ-ㅗ가-힣0-9]{4,}">
+
+        <label for="">주민등록 번호를 입력해주세요</label>
+        <input type="text" pattern="[0-9]{13}">
+
+        <label for="">이메일 주소를 입력해주세요</label>
+        <input type="email" pattern="[a-zA-Z0-9]*@[a-z]*\.[a-z]*">
+
+        <label for="">전화번호를 입력하세요</label>
+        <input type="tel" pattern="(010|011|016)[0-9]{3,4}[0-9]{4}">
+
+        <button>제출</button>
+    </form>
+
+
+
+</body>
+
+</html>
