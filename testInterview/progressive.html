@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .layout-grid {
+            display: grid;
+        }
+
+        .layout-flex {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <picture>
+        <source srcset="test.webp" type="image/webp">
+        <source srcset="test.avif" type="image/avif">
+        <img src="test.jpeg" alt="테스트 이미지입니다.">
+    </picture>
+
+    <script>
+        const container = document.querySelector('.container');
+        // container 요소가 사용할 수 있는 모든 스타일 속성을 가지고 잇는 객체입니다.
+        if (container.style.grid !== undefined) {
+            container.classList.add('.layout-grid');
+        } else {
+            container.classList.add('.layout-flex');
+        }
+    </script>
+
+    <video>
+        <source src="test.mp4" type="video/mp4">
+        <source src="test.webm" type="video/webm">
+
+        <p>사용하시는 브라우저가 비디오를 지원하지 않습니다. 업그레이드 해주세요. <a href="최신 브라우저 링크">여기에서</a></p>
+    </video>
+
+
+
+    <script>
+        const canvas = document.createElement('canvas');
+        const strong = document.createElement('strong');
+        const ctx = canvas.getContext('webgl');
+
+        if (ctx) {
+            document.body.append(canvas);
+        } else {
+            strong.textContent = '이 사이트는 구형 브라우저에서 정상적으로 작동하지 않습니다!';
+            document.body.append(strong);
+        }
+    </script>
+
+</body>
+
+</html>
