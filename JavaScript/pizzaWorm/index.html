@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        canvas {
+            border: 1px solid black;
+        }
+
+        #canvasBg {
+            position: absolute;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvasBg" width="300" height="300"></canvas>
+    <canvas id="canvas" width="300" height="300"></canvas>
+    <script src="Tile.js"></script>
+    <script src="Worm.js"></script>
+    <script src="Pizza.js"></script>
+
+
+    <script>
+        // 캔버스 기본 설정
+        const canvas = document.querySelector("#canvas");
+        const ctx = canvas.getContext('2d');
+        const cWidth = canvas.width;
+        const cHeight = canvas.height;
+
+        const canvasBg = document.querySelector("#canvasBg");
+        const ctxBg = canvasBg.getContext('2d');
+
+        // 타일 설정
+        const tileSize = 10;
+
+        // 화면에 깔릴 타일의 가로, 세로 갯수
+        const tileWidth = cWidth / tileSize;
+        const tileHeight = cHeight / tileSize;
+
+        let playId;
+
+        // 점수를 그리기
+        let score = 0;
+
+        const renderScore = () => {
+            ctx.font = '20px Helvetica';
+            ctx.fillStyle = 'black';
+            ctx.fillText(`SCORE : ${score}`, 0, 30);
+        }
+
+        // 게임오버 랜더링
+        const renderGameOver = () => {
+            cancelAnimationFrame(playId);
+            ctx.font = '30px Helvetica';
+            ctx.fillStyle = 'red';
+            ctx.textBaseline = 'middle';
+            ctx.textAlign = 'center';
+            ctx.fillText('GAME OVER', cWidth / 2, cHeight / 2);
+        }
+
+        const worm = new Worm();
+        const pizza = new Pizza();
+
+        // 방향키만 인식하도록 이벤트 리스너를 달아줍니다.
+        document.body.addEventListener('keydown', (event) => {
+            if (event.key === "ArrowUp" || event.key === "ArrowDown" || event.key === "ArrowLeft" || event.key === "ArrowRight") {
+                worm.checkDirection(event.key);
+            }
+        });
+
+
+        const playGame = () => {
+
+            setTimeout(() => {
+                playId = requestAnimationFrame(playGame);
+
+                ctx.clearRect(0, 0, cWidth, cHeight);
+                worm.moveWorm();
+                worm.renderWorm();
+                pizza.renderPizza();
+            }, 100);
+        }
+
+        requestAnimationFrame(playGame);
+
+    </script>
+</body>
+
+</html>
