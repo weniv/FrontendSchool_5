@@ -5,7 +5,5 @@ function Title() {
     className: "title"
   }, "hello react title"), createElement("strong", null, "gooooooodd!!!!"));
 }
-
-// console.log(Title());
-
+console.log(Title());
 render(createElement(Title, null), document.querySelector("#root"));

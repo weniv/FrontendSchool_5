@@ -10,6 +10,6 @@ function Title() {
     );
 }
 
-// console.log(Title());
+console.log(Title());
 
 render(<Title />, document.querySelector("#root"));
